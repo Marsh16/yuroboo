@@ -21,7 +21,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Column } from "@/once-ui/components/Column";
 import Image from "next/image";
-import styles from './Home.module.scss'
+import styles from "./Home.module.scss";
 import { Span } from "next/dist/trace";
 export async function generateMetadata({
   params: { locale },
@@ -96,74 +96,115 @@ export default function Home({
           }),
         }}
       />
-      <Flex
-        fillWidth
-        direction="row"
-        radius="l-8"
-        style={{
-          background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
-        }}
-      >
-        <Flex direction="column" fillWidth >
-          <Column fillWidth alignItems="center" position="relative" style={{margin: 'auto'}}>
-		  <Flex direction="column" radius='full-8' background="info-strong" height={25} width={25} padding="48" style={{borderRadius: '100%', background: '#8E6648'}}>
-				<Text style={{margin: 'auto', fontSize:"2rem", fontWeight: "bold", color: "white"}}>WELCOME</Text>
-				<Text style={{margin: 'auto', color: "white"}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus varius semper. Pellentesque rhoncus sed nisl vitae sollicitudin. Nullam dignissim, diam non consectetur gravida, quam justo viverra nibh, ut varius massa elit eget massa. Maecenas blandit enim neque, quis accumsan </Text>
-		  </Flex>
-          </Column>
+
+      <RevealFx translateY="4" fillWidth justifyContent="flex-start">
+        <Flex
+          fillWidth
+          direction="row"
+          radius="l-8"
+          style={{
+            background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
+          }}
+        >
+          <Flex direction="column" fillWidth>
+            <Column
+              fillWidth
+              alignItems="center"
+              position="relative"
+              style={{ margin: "auto" }}
+            >
+              <Flex
+                direction="column"
+                height={25}
+                width={25}
+				gap="20"
+                style={{ borderRadius: "100%", background: "#8E6648" }}
+              >
+				<Flex
+                direction="column"
+                height={15}
+                width={17}
+                style={{margin: "auto"  }}
+              >
+                <Flex style={{ margin: "auto", color: "white" }}>
+                  <Text
+                    style={{
+                      fontSize: "2rem",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    WELCOME
+                  </Text>
+                </Flex>
+				<Flex style={{ margin: "auto", color: "white" }}>
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
+                  vitae sollicitudin. Nullam dignissim, diam non consectetur
+                  gravida, quam justo viverra nibh, ut varius massa elit eget
+                  massa. Maecenas blandit enim neque, quis accumsan
+                </Text>
+				</Flex>
+				</Flex>
+              </Flex>
+            </Column>
+          </Flex>
+
+          <Flex direction="column">
+            <Column fillWidth alignItems="center" gap="32" position="relative">
+              <Image
+                src="/images/banner.png"
+                width={500}
+                height={500}
+                alt="Picture of the author"
+              />
+            </Column>
+          </Flex>
         </Flex>
-        <Flex direction="column"  >
-          <Column fillWidth alignItems="center" gap="32" position="relative" >
+      </RevealFx>
+      <RevealFx translateY="12" delay={0.4}>
+        <Flex fillWidth direction="row" radius="l-8">
+          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
             <Image
               src="/images/banner.png"
               width={500}
               height={500}
               alt="Picture of the author"
-            /> 
-          </Column>
+            />
+            =
+          </Flex>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+            <Text style={{ marginBottom: "auto", color: "white" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              finibus varius semper. Pellentesque rhoncus sed nisl vitae
+              sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
+              justo viverra nibh, ut varius massa elit eget massa. Maecenas
+              blandit enim neque, quis accumsan{" "}
+            </Text>
+          </Flex>
         </Flex>
-      </Flex>
-      <Flex
-        fillWidth
-        direction="row"
-        radius="l-8"
-      >
-        <Flex direction="column" fillWidth style={{margin: 'auto'}}>
-		<Image
+      </RevealFx>
+      <RevealFx translateY="12" delay={0.4}>
+        <Flex fillWidth direction="row" radius="l-8">
+          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+            <Text style={{ margin: "auto", color: "white" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              finibus varius semper. Pellentesque rhoncus sed nisl vitae
+              sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
+              justo viverra nibh, ut varius massa elit eget massa. Maecenas
+              blandit enim neque, quis accumsan{" "}
+            </Text>
+          </Flex>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+            <Image
               src="/images/banner.png"
               width={500}
               height={500}
               alt="Picture of the author"
-            /> 
-=		  
-	  </Flex>
-	  <Flex direction="column" fillWidth style={{margin: 'auto'}}>
-	  <Text style={{margin: 'auto', color: "white"}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus varius semper. Pellentesque rhoncus sed nisl vitae sollicitudin. Nullam dignissim, diam non consectetur gravida, quam justo viverra nibh, ut varius massa elit eget massa. Maecenas blandit enim neque, quis accumsan </Text>
-
-		  
-	  </Flex>
-	 
-       </Flex>
-	   <Flex
-        fillWidth
-        direction="row"
-        radius="l-8"
-      >
-	   <Flex direction="column" fillWidth style={{margin: 'auto'}}>
-	  <Text style={{margin: 'auto', color: "white"}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus varius semper. Pellentesque rhoncus sed nisl vitae sollicitudin. Nullam dignissim, diam non consectetur gravida, quam justo viverra nibh, ut varius massa elit eget massa. Maecenas blandit enim neque, quis accumsan </Text>
-
-		  
-	  </Flex>
-	  <Flex direction="column" fillWidth style={{margin: 'auto'}}>
-		<Image
-              src="/images/banner.png"
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            /> 
-		  
-	  </Flex>
-	  </Flex>
+            />
+          </Flex>
+        </Flex>
+      </RevealFx>
     </Flex>
   );
 }
