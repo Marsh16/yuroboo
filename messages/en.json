@@ -1,0 +1,86 @@
+{
+    "person": {
+        "role": "Tech Developer"
+    },
+    "home": {
+        "label": "Home",
+        "title": "{name}'s Portfolio",
+        "description": "Portfolio website showcasing my work as a {role}",
+        "headline": "iOS Developer and AI Engineer",
+        "subline": "I'm Marsha, a Tech Developer, where I code user interactive application features and Deep Learning for Image Classification. I am an University Student class of 2021."
+    },
+    "about": {
+        "label": "About",
+        "title": "About me",
+        "description": "Meet {name}, {role} from {location}",
+        "intro": {
+            "title": "Introduction",
+            "description": "Marsha is a Surabaya-based tech developer eager to contribute skills and enthusiasm to a challenging role where I can further explore cutting edge technologies in tech development, focusing on enhancing user experience and creating impactful tech solutions."
+        },
+        "work": {
+            "title": "Work Experience",
+            "experiences": {
+                "Apple Developer Academy @ UC": {
+                    "timeframe": "March 2024 - December 2024",
+                    "role": "iOS Developer",
+                    "achievements": "Successfully led the development of two applications, ArchCalculator and BillBro, showcasing technical skills and creativity. BillBro, designed for managing group expenses, has achieved over 100 downloads with a 5-star rating."
+                },
+                "Teaching & Learning Innovation Center": {
+                    "timeframe": "July 2023 - December 2023",
+                    "role": "AI Researcher Intern",
+                    "achievements": "Contributed to the development of innovative teaching tools that improved student engagement."
+                },
+                "Statistics and Probability Textbooks Using the Python Programming Language": {
+                    "timeframe": "July 2023 - October 2023",
+                    "role": "Research Assistant",
+                    "achievements": "Became a research assistant in the making of Statistics and Probability textbooks using the Python programming language"
+                },      
+                "Teacher Innovative Behavior Model Research": {
+                    "timeframe": "June 2023 - December 2023",
+                    "role": "Research Assistant",
+                    "achievements": "Served as a Research Assistant in the Teacher Innovative Behavior Model Research Grant Activity"
+                },           
+                "Biro Bebras UC": {
+                    "timeframe": "March 2023 - October 2023",
+                    "role": "Student Assistant - Bebras Module Assistant",
+                    "achievements": "Work as an Student Assistant for Bebras. Assist the lecturer on learning module about 'Teknologi Informasi dan Komputer'"
+                }, 
+                "Universitas Ciputra Surabaya": {
+                    "timeframe": "February 2023 - January 2024",
+                    "role": "Programming Assistant Lecturer",
+                    "achievements": "Provided one-on-one support to students, helping them navigate challenges in their programming assignments."
+                }
+            }
+        },
+        "studies": {
+            "title": "Studies",
+            "institutions": {
+                "Universitas Ciputra Surabaya": {
+                    "description": "Studied informatics."
+                }
+            }
+        },
+        "technical": {
+            "title": "Technical skills",
+            "skills": {
+                "Python": {
+                    "description": "Able to implement a Deep Learning Model with the accuracy of 99.5% and publication in a Sinta-4-indexed journal"
+                },
+                "Swift": {
+                    "description": "Led and released 2 iOS app to the AppStore, including BillBro which has achieved 100 downloads with a 5 star rating"
+                },
+                "MySQL": {
+                    "description": "Database management for building websites and apps using MySql"
+                }
+            }
+        }
+    },
+    "work": {
+        "label": "Catalog",
+        "title": "My projects",
+        "description": "Design and dev projects by {name}"
+    },
+    "projectCard": {
+        "label": "Read Case Study"
+    }
+}
