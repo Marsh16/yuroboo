@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
-import { Flex } from "../../../../../../Downloads/yuroboo-main/src/once-ui/components";
+import { Flex } from ".";
 
 interface RowProps extends React.ComponentProps<typeof Flex> {
   children?: React.ReactNode;
