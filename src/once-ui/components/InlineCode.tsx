@@ -12,7 +12,7 @@ const InlineCode = forwardRef<HTMLDivElement, InlineCodeProps>(({ children, ...r
   return (
     <Flex
       as="span"
-      inline
+      // inline
     //   fit
       ref={ref}
       radius="s"

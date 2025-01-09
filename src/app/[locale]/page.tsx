@@ -9,7 +9,7 @@ import {
   RevealFx,
   Arrow,
   Background,
-  InlineCode,
+//   InlineCode,
   SmartImage,
 } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
