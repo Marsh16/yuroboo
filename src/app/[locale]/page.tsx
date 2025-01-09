@@ -1,133 +1,169 @@
-import React from 'react';
+import React from "react";
 
-import { Heading, Flex, Text, Button,  Avatar, RevealFx, Arrow } from '@/once-ui/components';
-import { Projects } from '@/components/work/Projects';
+import {
+  Heading,
+  Flex,
+  Text,
+  Button,
+  Avatar,
+  RevealFx,
+  Arrow,
+  Background,
+  InlineCode,
+  SmartImage,
+} from "@/once-ui/components";
+import { Projects } from "@/components/work/Projects";
 
-import { baseURL, routes, renderContent } from '@/app/resources'; 
+import { baseURL, routes, renderContent } from "@/app/resources";
 // import { Mailchimp } from '@/components';
 // import { Posts } from '@/components/blog/Posts';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { Column } from "@/once-ui/components/Column";
+import Image from "next/image";
+import styles from './Home.module.scss'
+import { Span } from "next/dist/trace";
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations();
+  const { home } = renderContent(t);
+  const title = home.title;
+  const description = home.description;
+  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
-export async function generateMetadata(
-	{params: {locale}}: { params: { locale: string }}
-) {
-	const t = await getTranslations();
-    const { home } = renderContent(t);
-	const title = home.title;
-	const description = home.description;
-	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
-
-	return {
-		title,
-		description,
-		openGraph: {
-			title,
-			description,
-			type: 'website',
-			url: `https://${baseURL}/${locale}`,
-			images: [
-				{
-					url: ogImage,
-					alt: title,
-				},
-			],
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title,
-			description,
-			images: [ogImage],
-		},
-	};
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: `https://${baseURL}/${locale}`,
+      images: [
+        {
+          url: ogImage,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
 }
 
-export default function Home(
-	{ params: {locale}}: { params: { locale: string }}
-) {
-	unstable_setRequestLocale(locale);
-	const t = useTranslations();
-	const { home, about, person } = renderContent(t);
-	return (
-		<Flex
-			maxWidth="m" fillWidth gap="xl"
-			direction="column" alignItems="center">
-			<script
-				type="application/ld+json"
-				suppressHydrationWarning
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						'@context': 'https://schema.org',
-						'@type': 'WebPage',
-						name: home.title,
-						description: home.description,
-						url: `https://${baseURL}`,
-						image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
-						publisher: {
-							'@type': 'Person',
-							name: person.name,
-							image: {
-								'@type': 'ImageObject',
-								url: `${baseURL}${person.avatar}`,
-							},
-						},
-					}),
-				}}
-			/>
-			<Flex
-				fillWidth
-				direction="column"
-				paddingY="l" gap="m">
-					<Flex
-						direction="column"
-						fillWidth maxWidth="s">
-						<RevealFx
-							translateY="4" fillWidth justifyContent="flex-start" paddingBottom="m">
-							<Heading
-								wrap="balance"
-								variant="display-strong-l">
-								{home.headline}
-							</Heading>
-						</RevealFx>
-						<RevealFx
-							translateY="8" delay={0.2} fillWidth justifyContent="flex-start" paddingBottom="m">
-							<Text
-								wrap="balance"
-								onBackground="neutral-weak"
-								variant="heading-default-xl">
-								{home.subline}
-							</Text>
-						</RevealFx>
-						<RevealFx translateY="12" delay={0.4}>
-							<Flex fillWidth>
-								<Button
-									id="about"
-									data-border="rounded"
-									href={`/${locale}/about`}
-									variant="tertiary"
-									size="m">
-									<Flex
-										gap="8"
-										alignItems="center">
-										{about.avatar.display && (
-											<Avatar
-												style={{marginLeft: '-0.75rem', marginRight: '0.25rem'}}
-												src={person.avatar}
-												size="m"/>
-											)}
-											{t("about.title")}
-											<Arrow trigger="#about"/>
-									</Flex>
-								</Button>
-							</Flex>
-						</RevealFx>
-					</Flex>
-				
-			</Flex>
-			<RevealFx translateY="16" delay={0.6}>
-				<Projects range={[1,1]} locale={locale}/>
-			</RevealFx>
-			<Projects range={[2]} locale={locale}/>
-		</Flex>
-	);
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations();
+  const { home, about, person } = renderContent(t);
+  return (
+    <Flex
+      maxWidth="m"
+      fillWidth
+      gap="xl"
+      direction="column"
+      alignItems="center"
+    >
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: home.title,
+            description: home.description,
+            url: `https://${baseURL}`,
+            image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
+            publisher: {
+              "@type": "Person",
+              name: person.name,
+              image: {
+                "@type": "ImageObject",
+                url: `${baseURL}${person.avatar}`,
+              },
+            },
+          }),
+        }}
+      />
+      <Flex
+        fillWidth
+        direction="row"
+        radius="l-8"
+        style={{
+          background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
+        }}
+      >
+        <Flex direction="column" fillWidth >
+          <Column fillWidth alignItems="center" position="relative" style={{margin: 'auto'}}>
+		  <Flex direction="column" radius='full-8' background="info-strong" height={25} width={25} padding="48" style={{borderRadius: '100%', background: '#8E6648'}}>
+				<Text style={{margin: 'auto', fontSize:"2rem", fontWeight: "bold", color: "white"}}>WELCOME</Text>
+				<Text style={{margin: 'auto', color: "white"}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus varius semper. Pellentesque rhoncus sed nisl vitae sollicitudin. Nullam dignissim, diam non consectetur gravida, quam justo viverra nibh, ut varius massa elit eget massa. Maecenas blandit enim neque, quis accumsan </Text>
+		  </Flex>
+          </Column>
+        </Flex>
+        <Flex direction="column"  >
+          <Column fillWidth alignItems="center" gap="32" position="relative" >
+            <Image
+              src="/images/banner.png"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            /> 
+          </Column>
+        </Flex>
+      </Flex>
+      <Flex
+        fillWidth
+        direction="row"
+        radius="l-8"
+      >
+        <Flex direction="column" fillWidth style={{margin: 'auto'}}>
+		<Image
+              src="/images/banner.png"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            /> 
+=		  
+	  </Flex>
+	  <Flex direction="column" fillWidth style={{margin: 'auto'}}>
+	  <Text style={{margin: 'auto', color: "white"}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus varius semper. Pellentesque rhoncus sed nisl vitae sollicitudin. Nullam dignissim, diam non consectetur gravida, quam justo viverra nibh, ut varius massa elit eget massa. Maecenas blandit enim neque, quis accumsan </Text>
+
+		  
+	  </Flex>
+	 
+       </Flex>
+	   <Flex
+        fillWidth
+        direction="row"
+        radius="l-8"
+      >
+	   <Flex direction="column" fillWidth style={{margin: 'auto'}}>
+	  <Text style={{margin: 'auto', color: "white"}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus varius semper. Pellentesque rhoncus sed nisl vitae sollicitudin. Nullam dignissim, diam non consectetur gravida, quam justo viverra nibh, ut varius massa elit eget massa. Maecenas blandit enim neque, quis accumsan </Text>
+
+		  
+	  </Flex>
+	  <Flex direction="column" fillWidth style={{margin: 'auto'}}>
+		<Image
+              src="/images/banner.png"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            /> 
+		  
+	  </Flex>
+	  </Flex>
+    </Flex>
+  );
 }

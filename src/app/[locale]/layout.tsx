@@ -92,6 +92,9 @@ export default async function RootLayout({
 	return (
 		<NextIntlClientProvider messages={messages}>
 			<Flex
+				style={{
+					background: 'radial-gradient(circle,rgb(248, 149, 83) 0%, #F1E3B9 30%)'
+				}}
 				as="html" lang="en"
 				background="page"
 				data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
