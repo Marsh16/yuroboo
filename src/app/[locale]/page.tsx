@@ -133,7 +133,7 @@ export default function Home({
                   margin: "auto",
                   color: "white", 
                   alignItems: "center"}}
-                className={styles.mobileCircle}
+                className={styles.mobile}
               >
                 <Flex
                   direction="column"
