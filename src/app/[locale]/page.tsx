@@ -168,11 +168,10 @@ export default function Home({
               </Flex>
             </Column>
           </Flex>
-          <Flex direction="column" fillWidth className={styles.show}>
+          <Flex direction="column"  className={styles.show}>
             <Column
               fillWidth
               alignItems="center"
-              position="relative"
               style={{ margin: "auto" }}
               className={styles.mobileCircle}
 
