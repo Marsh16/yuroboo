@@ -351,7 +351,7 @@ export default function Home({
                   fontSize: "2rem",
                   fontWeight: "bold",
                   color: "#624633",
-                  textAlign: "end",
+                  textAlign: "end"
                 }}
               >
                 WELCOME
@@ -363,7 +363,6 @@ export default function Home({
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "30px" 
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
