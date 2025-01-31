@@ -1,0 +1,58 @@
+---
+title: "Implementasi Arsitektur DenseNet Dengan Transfer Learning untuk Mengklasifikasikan Penyakit Daun Mangga"
+publishedAt: "2025-01-07"
+summary: "Penelitian ini bertujuan untuk menjawab tantangan tersebut dengan menerapkan pendekatan Deep Learning untuk mengklasifikasikan penyakit pada daun mangga. Model DenseNet mencapai akurasi keseluruhan sebesar 99,5% dalam mengklasifikasikan penyakit daun mangga."
+images:
+  - "/images/projects/project-01/python.png"
+  - "/images/projects/project-01/model1.png"
+  - "/images/projects/project-01/model2.png"
+  - "/images/projects/project-01/model3.png"
+  - "/images/projects/project-01/model4.png"
+team:
+  - name: "Marsha Alexis Likorawung"
+    role: "Tech Lead, iOS Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/marsha-alexis-likorawung-16b13a267/"
+---
+
+## Ringkasan
+
+Tanaman mangga (Mangifera indica) merupakan komoditas ekspor penting dalam industri hortikultura, yang menawarkan banyak manfaat nutrisi dan ekonomi. Mereka kaya akan mikronutrien penting, vitamin, dan fitokimia, yang berkontribusi terhadap tingginya permintaan global. Namun tanaman mangga rentan terhadap berbagai penyakit yang dapat berdampak buruk pada hasil dan kualitasnya. Penyakit-penyakit ini menimbulkan tantangan bagi petani mangga, yang banyak di antara mereka kesulitan mengidentifikasi dan mengobati penyakit tersebut secara efektif, sehingga berpotensi menyebabkan kegagalan panen. Penelitian ini bertujuan untuk menjawab tantangan tersebut dengan menerapkan pendekatan Deep Learning untuk mengklasifikasikan penyakit pada daun mangga. Secara khusus, penelitian ini menggunakan Convolutional Neural Network (CNN) dengan arsitektur DenseNet, yang dikenal efisiensinya dalam tugas klasifikasi gambar. Studi ini menggabungkan Contrast Limited Adaptive Histogram Equalization (CLAHE) untuk pra-pemrosesan gambar guna menyempurnakan detail dan meningkatkan performa model. Transfer Learning digunakan untuk mengoptimalkan model DenseNet, memanfaatkan model terlatih untuk mencapai akurasi tinggi bahkan dengan kumpulan data yang relatif kecil. Dataset yang digunakan dalam penelitian ini terdiri dari 4000 gambar daun mangga yang diberi label, mencakup tujuh kategori penyakit dan daun sehat. Gambar-gambar ini mencakup penyakit umum seperti Antraknosa, Dieback, Jamur Tepung, Karat Merah, Kumbang Pemotong, Kanker Bakteri, dan Jamur Jelaga. Model DenseNet mencapai akurasi keseluruhan sebesar 99,5% dalam mengklasifikasikan penyakit daun mangga.
+
+## Metode yang Digunakan
+Pengumpulan Data:
+- **Mendeley Data**: Penelitian ini mencakup dataset sebanyak 4000 gambar daun mangga yang masing-masing diberi label berdasarkan jenis penyakit atau kondisi kesehatan. Kumpulan datanya seimbang, dengan jumlah gambar yang sama—500 untuk setiap kategori.  Kategorinya antara lain Antraknosa, Jamur Tepung, Kanker Bakteri, Kumbang Pemotong, Die Back, Pengusir Empedu, Jamur Jelaga, dan Sehat.
+
+Pra-Pemrosesan Data:
+- **CLAHE (Contrast Limited Adaptive Histogram Equalization)**: Penggunaan CLAHE untuk pra-pemrosesan gambar secara signifikan meningkatkan detail gambar, sehingga memudahkan model untuk mengidentifikasi fitur penyakit.
+- **Data Augmentation Techniques**: Teknik augmentasi data yang digunakan dalam penelitian ini (rotasi acak, pembalikan vertikal dan horizontal), meningkatkan keragaman kumpulan data, meningkatkan ketahanan dan akurasi model.
+- **Image Normalization**: model CNN dapat mengidentifikasi fitur-fitur penting dengan lebih efektif. Hal ini penting karena memastikan model dapat memproses gambar secara konsisten.
+
+Pemilihan Model:
+- **DenseNet121**: Pada model klasifikasi Deep Learning ini, arsitektur yang digunakan dalam mengklasifikasikan penyakit pada daun mangga adalah DenseNet121.
+
+Pelatihan Model:
+- **Stochastic Gradient Descent (SGD)**: Pengoptimal Stochastic Gradient Descent (SGD) digunakan dalam penelitian ini untuk mengoptimalkan kinerja model.
+- **Transfer Learning**: Pembelajaran transfer memainkan peran penting dalam mengoptimalkan kinerja model DenseNet. Dengan memanfaatkan model terlatih, penelitian ini mampu mencapai akurasi tinggi bahkan dengan kumpulan data yang relatif kecil.
+
+Evaluasi Model:
+- **Accuracy, precision, recall, dan F1-score**
+- **Confusion Matrix**
+- **Grafik Model  Loss  dan  Accuracy**
+
+## Tech Stack
+
+- **Python**: Menggunakan Python untuk bahasa pemrogramannya
+- **Tensorflow**: Menggunakan Perpustakaan Tensorflow dan Keras API
+
+## Tantangan dan Pembelajaran
+
+Meskipun model DenseNet mencapai akurasi tinggi, masih ada beberapa hal yang perlu ditingkatkan.  Penelitian di masa depan dapat fokus pada perluasan kumpulan data untuk memasukkan lebih banyak gambar dan kategori penyakit yang berbeda guna meningkatkan ketahanan dan kemampuan generalisasi model.  Penerapan teknik lanjutan lainnya, seperti pembelajaran ansambel, juga dapat dieksplorasi untuk meningkatkan akurasi klasifikasi.
+
+## Hasil
+
+Model DenseNet yang menggunakan CLAHE menunjukkan kinerja luar biasa dalam mengklasifikasikan penyakit daun mangga, mencapai akurasi keseluruhan sebesar 99,5%. Tingkat akurasi yang tinggi ini menunjukkan efektivitas model dalam membedakan berbagai kategori penyakit dan daun sehat.
+
+## Tautan Jurnal
+
+[Implementasi Arsitektur DenseNet Dengan Transfer Learning untuk Mengklasifikasikan Penyakit Daun Mangga](https://jurnal.stts.edu/index.php/INSYST/article/view/401)

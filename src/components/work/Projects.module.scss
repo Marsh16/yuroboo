@@ -1,0 +1,32 @@
+.hover {
+    transition: var(--transition-micro-medium);
+
+    &:hover {
+        transform: translateX(var(--static-space-8));
+
+        .indicator {
+            transform: rotate(0);
+        }
+    }
+}
+
+.indicator {
+    transform: rotate(-90deg);
+    left: -2rem;
+    transition: var(--transition-micro-medium);
+}
+
+.projectsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; // Adjust the gap as needed
+  
+    .projectCard {
+      flex: 1 1 calc(33.333% - 16px); // 3 columns
+      box-sizing: border-box;
+  
+      @media (max-width: 768px) {
+        flex: 1 1 100%; // 1 column on mobile
+      }
+    }
+  }

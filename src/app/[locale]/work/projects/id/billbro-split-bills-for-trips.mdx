@@ -1,0 +1,72 @@
+---
+title: "BillBro: Aplikasi Pembagi Tagihan untuk Liburan"
+publishedAt: "2025-01-07"
+summary: "BillBro adalah aplikasi yang dapat membantu sekelompok orang yang sedang berlibur bersama untuk membagi tagihan aktivitas mereka secara lebih rinci, sehingga beberapa tagihan dapat dibagi dalam 1 aplikasi dan tidak terfragmentasi, dan mereka bisa mendapatkan faktur mereka lebih lengkap dan perhitungan yang lebih handal dengan fitur input manual atau scan catatan menggunakan OCR (Optical Character Recognition). OCR adalah sistem yang digunakan untuk mengubah teks atau gambar menjadi teks digital. Fitur-fitur dalam aplikasi ini dapat membantu pengguna lebih mudah membagi tagihan mereka saat bepergian bersama."
+images:
+  - "/images/projects/project-01/billbros.png"
+  - "/images/projects/project-01/swift.png"
+  - "/images/projects/project-01/billbro.jpeg"
+  - "/images/projects/project-01/grad.jpeg"
+  - "/images/projects/project-01/certificate-apple.jpeg"
+team:
+  - name: "Marsha Alexis Likorawung"
+    role: "Tech Lead, iOS Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/marsha-alexis-likorawung-16b13a267/"
+  - name: "Calvin Christiano"
+    role: "Project Manager"
+    avatar: "/images/projects/project-01/calvin.png"
+    linkedIn: "https://www.linkedin.com/in/calvin-christiano-514327248/"
+  - name: "Zafira Salma Salsabil"
+    role: "Design Lead, UI/UX Designer"
+    avatar: "/images/projects/project-01/zafira.png"
+    linkedIn: "https://www.linkedin.com/in/zafira-salma-salsabil-ab6756211/"
+  - name: "Trisha Alexis Likorawung"
+    role: "iOS Developer"
+    avatar: "/images/projects/project-01/trisha.png"
+    linkedIn: "https://www.linkedin.com/in/trisha-alexis-45275b267/"
+  - name: "Rifqie Tilqa Reamizard"
+    role: "iOS Developer"
+    avatar: "/images/projects/project-01/rifqie.png"
+    linkedIn: "https://www.linkedin.com/in/rifqie-reamizard/"
+  - name: "Michelle Swastika Bianglala Nusantara"
+    role: "UI/UX Designer"
+    avatar: "/images/projects/project-01/michelle.png"
+    linkedIn: "https://www.linkedin.com/in/michelle-swastika-bianglala-nusantara-8b8267269/"
+---
+
+## Ringkasan
+
+BillBro for Macro Challenge di Apple Developer Academy @ UC, merupakan aplikasi yang dapat membantu sekelompok orang yang sedang melakukan perjalanan liburan bersama untuk membagi tagihan atas kegiatan mereka secara lebih detail, sehingga beberapa tagihan dapat dibagi dalam 1 aplikasi dan tidak terpecah-pecah, serta mereka bisa mendapatkan invoice mereka dengan lebih lengkap dan perhitungan yang lebih terpercaya dengan fitur input manual atau scan nota dengan memanfaatkan OCR (Optical character recognition). OCR adalah sebuah sistem yang digunakan untuk mengubah teks atau gambar menjadi teks digital. Fitur-fitur yang ada di dalam aplikasi ini dapat membantu pengguna lebih mudah membagi tagihan mereka saat bepergian berlibur bersama. 
+
+## Fitur Utama
+
+- **Scan dan Konversi Bill**: Scan tagihan Anda dan buat detailnya secara otomatis.
+- **Bagi Pengeluaran Secara Adil**: Tetapkan Tagihan dengan perhitungan pembagian yang adil.
+- **Lacak Semua Pengeluaran Anda**: Simpan semua tagihan Anda di satu tempat dan lihat siapa yang berhutang kepada Anda.
+- **Bagikan Ringkasan Hutang**: Kirim rincian pengeluaran secara instan ke grup Anda.
+
+## Teknologi yang Digunakan
+
+- **OCR Scan**: Menggunakan OCR untuk Input bill dengan mengambil gambar/memilih gambar struk. Menggunakan Gemini AI API dari Pihak Ketiga
+- **Widget**: Akses Lebih Cepat untuk Memasukkan Tagihan. Menggunakan SwiftUI dan SwiftData
+- **Notifikasi**: Pembuat Perjalanan mendapatkan Notifikasi setelah perjalanan berakhir H+1 dan H+3 untuk mengingatkan peserta mereka. OneSignal (layanan untuk mengirim pemberitahuan push) Pihak Ketiga, Supabase untuk database online, sehingga dapat diintegrasikan dengan onesignal untuk mengirim pemberitahuan push.
+- **Perjalanan Aktif**: BillBro memiliki perjalanan aktif sehingga pengguna dapat memilih perjalanan mereka lebih cepat di widget. Menggunakan SwiftUI dan Swift.
+- **Bagikan PDF**: Bagikan perjalanan dalam File Faktur PDF ke peserta Anda atau simpan file pdf. Menggunakan SwiftUI dan PDFKit.
+- **Salin Nomor Rekening**: Salin nomor dan transfer. Menggunakan SwiftUI.
+- **Database**: SwiftData dan Supabase (hanya untuk notifikasi)
+
+## Tech Stack
+
+- **Teknologi Apple**: SwiftUI, SwiftData, WidgetKit, Notifications, PDFKit
+- **Pihak Ketiga**: OneSignal, Gemini API, Supabase
+
+## Tantangan dan Pembelajaran
+
+Proses penggabungan Git saat ini kurang teliti, sering kali menyebabkan masuknya kode yang sudah ketinggalan zaman atau duplikat. Untuk mengurangi ini, tim akan menekankan pemilihan perubahan kode yang lebih hati-hati selama proses penggabungan. Selain itu, pendekatan penanganan kesalahan saat ini, yang sangat bergantung pada operator "!", menimbulkan risiko crash aplikasi yang signifikan. Kedepannya, tim berencana untuk menerapkan mekanisme penanganan kesalahan yang lebih robust seperti guard, if let, dan try-catch block. Selain itu, tim menyadari potensi manfaat dari mengadopsi pola arsitektur MVVM (Model-View-ViewModel) untuk meningkatkan pemeliharaan kode, kemampuan pengujian, dan struktur proyek secara keseluruhan.
+
+## Hasil
+
+BillBro berhasil mengatasi tantangan membagi pengeluaran di antara teman selama perjalanan kelompok. Dengan memanfaatkan teknologi canggih seperti OCR, API Gemini yang didukung AI, dan layanan berbasis cloud, aplikasi ini menawarkan solusi yang ramah pengguna dan efisien.
+
+Proyek ini menunjukkan penerapan teknologi mutakhir yang berhasil untuk memecahkan masalah dunia nyata, menunjukkan potensi solusi inovatif untuk meningkatkan pengalaman perjalanan dan meningkatkan interaksi sosial.

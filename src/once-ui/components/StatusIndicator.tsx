@@ -1,47 +1,33 @@
-"use client";
+'use client';
 
-import React, { forwardRef } from "react";
-import classNames from "classnames";
-import styles from "./StatusIndicator.module.scss";
-import { Flex } from "./Flex";
+import React, { forwardRef } from 'react';
+import classNames from 'classnames';
+import styles from './StatusIndicator.module.scss';
 
-interface StatusIndicatorProps extends React.ComponentProps<typeof Flex> {
-  size: "s" | "m" | "l";
-  color:
-    | "blue"
-    | "indigo"
-    | "violet"
-    | "magenta"
-    | "pink"
-    | "red"
-    | "orange"
-    | "yellow"
-    | "moss"
-    | "green"
-    | "emerald"
-    | "aqua"
-    | "cyan"
-    | "gray";
-  ariaLabel?: string;
-  className?: string;
-  style?: React.CSSProperties;
+interface StatusIndicatorProps {
+    size: 's' | 'm' | 'l';
+    color: 'green' | 'yellow' | 'red' | 'gray';
+    ariaLabel?: string;
+    className?: string;
+    style?: React.CSSProperties;
 }
 
-const StatusIndicator = forwardRef<HTMLDivElement, StatusIndicatorProps>(
-  ({ size, color, ariaLabel = `${color} status indicator`, className, style, ...rest }, ref) => {
+const StatusIndicator = forwardRef<HTMLDivElement, StatusIndicatorProps>(({
+    size,
+    color,
+    className,
+    style,
+    ariaLabel = `${color} status indicator`
+}, ref) => {
     return (
-      <Flex
-        ref={ref}
-        style={style}
-        className={classNames(styles.statusIndicator, styles[size], styles[color], className)}
-        aria-label={ariaLabel}
-        radius="full"
-        {...rest}
-      />
+        <div
+            ref={ref}
+            style={style}
+            className={classNames(styles.statusIndicator, styles[size], styles[color], className)}
+            aria-label={ariaLabel}/>
     );
-  },
-);
+});
 
-StatusIndicator.displayName = "StatusIndicator";
+StatusIndicator.displayName = 'StatusIndicator';
 
 export { StatusIndicator };

@@ -29,7 +29,7 @@ interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 const Logo: React.FC<LogoProps> = ({
   size = "m",
   wordmark = true,
-  icon = true,
+  icon = false,
   href,
   iconSrc,
   wordmarkSrc,
@@ -40,7 +40,7 @@ const Logo: React.FC<LogoProps> = ({
   useEffect(() => {
     if (!icon && !wordmark) {
       console.warn(
-        "Both 'icon' and 'wordmark' props are set to false. The logo will not render any content.",
+        "Both 'icon' and 'wordmark' props are set to false. The logo will not render any content."
       );
     }
   }, [icon, wordmark]);
@@ -49,16 +49,17 @@ const Logo: React.FC<LogoProps> = ({
     <>
       {icon && !iconSrc && (
         <div
-          style={{
-            height: `var(--static-space-${sizeMap[size]})`,
-          }}
+          style={{ height: `var(--static-space-${sizeMap[size]})` }}
           className={styles.icon}
         />
       )}
+    <div
+        style={{ height: `var(--static-space-${sizeMap[size]})` , paddingLeft:"10%"}}
+      />
       {iconSrc && (
         <img
           style={{
-            height: `var(--static-space-${sizeMap[size]})`,
+            height: `var(--static-space-${sizeMap[size]}`,
             width: "auto",
           }}
           alt="Trademark"
@@ -67,9 +68,7 @@ const Logo: React.FC<LogoProps> = ({
       )}
       {wordmark && !wordmarkSrc && (
         <div
-          style={{
-            height: `var(--static-space-${sizeMap[size]})`,
-          }}
+          style={{ height: `var(--static-space-${sizeMap[size]})` }}
           className={styles.type}
         />
       )}
@@ -88,8 +87,8 @@ const Logo: React.FC<LogoProps> = ({
 
   return href ? (
     <Link
-      className={classNames("radius-l", "flex", "fit-height", className)}
-      style={style}
+      className={classNames("radius-l", "flex", className)}
+      style={{ height: "fit-content", ...style }}
       href={href}
       aria-label="Trademark"
       {...props}
@@ -98,10 +97,8 @@ const Logo: React.FC<LogoProps> = ({
     </Link>
   ) : (
     <Flex
-      className={classNames(className)}
-      radius="l"
-      fitHeight
-      style={style}
+      className={classNames("radius-l", "flex", className)}
+      style={{ height: "fit-content", ...style }}
       aria-label="Trademark"
     >
       {content}

@@ -12,16 +12,16 @@ const InlineCode = forwardRef<HTMLDivElement, InlineCodeProps>(({ children, ...r
   return (
     <Flex
       as="span"
-      inline
-      fit
+      // inline
+    //   fit
       ref={ref}
       radius="s"
       alignItems="center"
       paddingX="4"
       paddingY="1"
-      textType="code"
-      background="neutral-alpha-weak"
-      border="neutral-alpha-medium"
+    //   textType="code"
+      background="neutral-weak"
+      border="neutral-medium"
       className={styles.inlineCode}
       {...rest}
     >
