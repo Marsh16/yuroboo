@@ -30,32 +30,7 @@
     display: block;
   }
 }
-/* CSS Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-/* Ensure body does not overflow */
-body {
-  overflow-x: hidden;
-}
-
-/* Ensure all elements do not exceed 100% width */
-img,
-video,
-iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Add padding to the body to prevent content from touching the edges */
-body {
-  padding: 0 16px;
-}
 .image-container {
 
   width: 100%;
