@@ -352,7 +352,7 @@ export default function Home({
             <Flex
               direction="column"
               fillWidth
-              style={{ margin: "auto", paddingTop: "20px" }}
+              style={{ margin: "auto" }}
               className={styles.show}
             >
               <Text
