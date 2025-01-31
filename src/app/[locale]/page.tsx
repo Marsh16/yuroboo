@@ -100,7 +100,7 @@ export default function Home({
         }}
       />
 
-      <RevealFx translateY="4" fillWidth justifyContent="flex-start">
+      <RevealFx translateY="4" fillWidth justifyContent="flex-start"  className={styles.mobile}>
         <Flex
           fillWidth
           direction="row"
@@ -116,12 +116,13 @@ export default function Home({
               alignItems="center"
               position="relative"
               style={{ margin: "auto" }}
+              className={styles.mobile}
             >
               <Flex
                 direction="column"
                 height={25}
                 width={25}
-				gap="20"
+				        gap="20"
                 style={{ borderRadius: "100%", background: "#8E6648" }}
                 className={styles.mobile}
               >
@@ -169,7 +170,7 @@ export default function Home({
           </Flex>
         </Flex>
       </RevealFx>
-      <RevealFx translateY="12" delay={0.4}>
+      <RevealFx translateY="12" delay={0.4}  className={styles.mobile}>
         <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
           <Flex direction="column" className={styles.mobile} fillWidth style={{ margin: "auto" }}>
             <Image
@@ -191,9 +192,9 @@ export default function Home({
           </Flex>
         </Flex>
       </RevealFx>
-      <RevealFx translateY="12" delay={0.4}>
+      <RevealFx translateY="12" delay={0.4} className={styles.mobile}>
         <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.mobile}>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.hidden}>
             <Text style={{ margin: "auto", color: "white" , padding: "20px"  }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
@@ -209,6 +210,15 @@ export default function Home({
               height={500}
               alt="Picture of the author"
             />
+          </Flex>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.show}>
+            <Text style={{ margin: "auto", color: "white" , padding: "20px"  }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              finibus varius semper. Pellentesque rhoncus sed nisl vitae
+              sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
+              justo viverra nibh, ut varius massa elit eget massa. Maecenas
+              blandit enim neque, quis accumsan
+            </Text>
           </Flex>
         </Flex>
       </RevealFx>

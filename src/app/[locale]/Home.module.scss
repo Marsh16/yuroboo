@@ -9,8 +9,17 @@
     display: none;
   }
 
+
   .text {
       margin: 15px 0;
+  }
+}
+
+.show {
+  display: none;
+
+  @media (--s) {
+    display: block;
   }
 }
 

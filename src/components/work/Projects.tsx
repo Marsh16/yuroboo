@@ -27,8 +27,8 @@ export function Projects({ range, locale }: ProjectsProps) {
         marginBottom="40"
         paddingX="l"
         direction="column"
-        className={styles.projectsContainer}
       >
+        <Flex  className={styles.projectsContainer}>
           {displayedProjects.map((post) => (
             <ProjectCard
               key={post.slug}
@@ -43,6 +43,7 @@ export function Projects({ range, locale }: ProjectsProps) {
               }
             />
           ))}
+        </Flex>
       </Flex>
     );
 }

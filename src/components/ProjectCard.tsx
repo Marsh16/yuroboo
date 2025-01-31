@@ -102,19 +102,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <Flex
                 mobileDirection="column"
                 fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
-                {(description?.trim()) && (
+                {(description?.trim()) &&(
                    <Flex style={{margin:"auto"}}
-                        flex={7} direction="column"
-                        gap="16">
+                        flex={7} >
                         {description?.trim() && (
                             <Text
                                 wrap="balance"
                                 variant="body-default-s"
-                                onBackground="neutral-weak">
+                                onBackground="neutral-weak"
+                                align="center"
+                                style={{color:"#624633"}}>
                                 {description}
                             </Text>
                         )}
                     </Flex>
+                    
                 )}
                 {title && (
                     <Flex style={{margin:"auto"}}
@@ -122,7 +124,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         <Heading
                             as="h2"
                             wrap="balance"
-                            variant="heading-strong-xl">
+                            variant="heading-strong-xl"
+                            align="center"
+                            style={{color:"#624633"}}>
                             {title}
                         </Heading>
                     </Flex>
