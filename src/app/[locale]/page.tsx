@@ -267,7 +267,11 @@ export default function Home({
               >
                 WELCOME
               </Text>
-              <Flex className={styles.line}></Flex>
+              <Flex className={styles.line} style={{
+                  margin: "auto",
+                  padding: "20px",
+                  color: "#624633",
+                }}></Flex>
               <Text
                 style={{
                   marginBottom: "auto",
@@ -305,17 +309,24 @@ export default function Home({
                   fontWeight: "bold",
                   color: "#624633",
                   textAlign: "end",
+                  paddingTop: "20px",
                 }}
               >
                 WELCOME
               </Text>
-              <Flex className={styles.line}></Flex>
+              <Flex className={styles.line} style={{
+                  margin: "auto",
+                  padding: "20px",
+                  color: "#624633",
+                  textAlign: "end",
+                }}></Flex>
               <Text
                 style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
+                  paddingTop: "20px",
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -351,18 +362,26 @@ export default function Home({
                   fontSize: "2rem",
                   fontWeight: "bold",
                   color: "#624633",
-                  textAlign: "end"
+                  textAlign: "end",
+                  paddingTop: "20px",
+
                 }}
               >
                 WELCOME
               </Text>
-              <Flex className={styles.line}></Flex>
+              <Flex className={styles.line} style={{
+                  margin: "auto",
+                  padding: "20px",
+                  color: "#624633",
+                  textAlign: "end",
+                }}></Flex>
               <Text
                 style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
+                  paddingTop: "20px",
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
