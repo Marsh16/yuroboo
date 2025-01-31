@@ -107,6 +107,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         flex={7} >
                         {description?.trim() && (
                             <Text
+                                as="h5"
                                 wrap="balance"
                                 variant="body-default-s"
                                 onBackground="neutral-weak"
