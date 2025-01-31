@@ -115,13 +115,12 @@ export default function Home({
           }}
           className={styles.mobile}
         >
-          <Flex direction="column" fillWidth className={styles.mobile}>
+          <Flex direction="column" fillWidth className={styles.hidden}>
             <Column
               fillWidth
               alignItems="center"
               position="relative"
               style={{ margin: "auto" }}
-              className={styles.mobile}
             >
               <Flex
                 direction="column"
@@ -131,20 +130,15 @@ export default function Home({
                 style={{  borderRadius: "100%",
                   background: "#8E6648",
                   margin: "auto",
-                  color: "white", 
-                  alignItems: "center",
-                  textAlign: "center"}}
-                className={styles.mobile}
+                  color: "white"}}
               >
                 <Flex
                   direction="column"
                   height={15}
                   width={17}
                   style={{ margin: "auto" }}
-                  className={styles.mobile}
                 >
                   <Flex
-                    className={styles.mobile}
                   >
                     <Text
                       style={{
@@ -156,9 +150,57 @@ export default function Home({
                     </Text>
                   </Flex>
                   <Flex
-                    className={styles.mobile}
                   >
                     <Text>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Curabitur finibus varius semper. Pellentesque rhoncus sed
+                      nisl vitae sollicitudin. Nullam dignissim, diam non
+                      consectetur gravida, quam justo viverra nibh, ut varius
+                      massa elit eget massa. Maecenas blandit enim neque, quis
+                      accumsan
+                    </Text>
+                  </Flex>
+                </Flex>
+              </Flex>
+            </Column>
+          </Flex>
+          <Flex direction="column" fillWidth className={styles.show}>
+            <Column
+              fillWidth
+              alignItems="center"
+              position="relative"
+              style={{ margin: "auto" }}
+            >
+              <Flex
+                direction="column"
+                height={25}
+                width={25}
+                gap="20"
+                style={{
+                  margin: "auto",
+                  color: "white"}}
+              >
+                <Flex
+                  direction="column"
+                  height={15}
+                  width={17}
+                  style={{ margin: "auto" }}
+                >
+                  <Flex
+                  >
+                    <Text
+                      style={{
+                        fontSize: "2rem",
+                        fontWeight: "bold",
+                        color: "#624633"
+                      }}
+                    >
+                      WELCOME
+                    </Text>
+                  </Flex>
+                  <Flex
+                  >
+                    <Text  style={{ color: "#624633"}}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Curabitur finibus varius semper. Pellentesque rhoncus sed
                       nisl vitae sollicitudin. Nullam dignissim, diam non
