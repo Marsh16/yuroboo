@@ -70,7 +70,6 @@ export default function Home({
   const { home, about, person } = renderContent(t);
   return (
     <Flex
-      style={{ overflowX: "hidden", overflowY: "auto" }} // Ensure no horizontal overflow and handle vertical scrolling
     >
     <Flex
       maxWidth="m"
@@ -113,6 +112,7 @@ export default function Home({
           radius="l-8"
           style={{
             background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
+           overflowX: "hidden", overflowY: "auto" 
           }}
           className={styles.mobile}
         >
