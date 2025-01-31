@@ -16,11 +16,6 @@
 }
 
 .mobileCircle {
-  border-radius: "100%";
-  background: "#8E6648";
-  margin: "auto";
-  color: "white";
-
   @media (--s) {
     border-radius: "100%";
     margin: "auto";

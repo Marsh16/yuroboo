@@ -128,6 +128,10 @@ export default function Home({
                 height={25}
                 width={25}
                 gap="20"
+                style={{  borderRadius: "100%",
+                  background: "#8E6648",
+                  margin: "auto",
+                  color: "white" }}
                 className={styles.mobileCircle}
               >
                 <Flex
