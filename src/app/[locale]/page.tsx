@@ -75,7 +75,6 @@ export default function Home({
       gap="xl"
       direction="column"
       alignItems="center"
-      className={styles.mobile}
     >
       <script
         type="application/ld+json"
@@ -104,7 +103,6 @@ export default function Home({
         translateY="4"
         fillWidth
         justifyContent="flex-start"
-        className={styles.mobile}
       >
         <Flex
           fillWidth
