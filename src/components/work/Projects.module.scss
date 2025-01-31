@@ -22,7 +22,7 @@
     gap: 16px; // Adjust the gap as needed
   
     .projectCard {
-      flex: 1 1 calc(33.333% - 16px); // 3 columns
+      flex: 1 1 calc(18% - 16px); // 3 columns
       box-sizing: border-box;
   
       @media (max-width: 768px) {

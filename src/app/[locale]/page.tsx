@@ -131,7 +131,8 @@ export default function Home({
                 style={{  borderRadius: "100%",
                   background: "#8E6648",
                   margin: "auto",
-                  color: "white" }}
+                  color: "white", 
+                  alignItems: "center"}}
                 className={styles.mobileCircle}
               >
                 <Flex
