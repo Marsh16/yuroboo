@@ -26,9 +26,8 @@ export function Projects({ range, locale }: ProjectsProps) {
         gap="xl"
         marginBottom="40"
         paddingX="l"
-        className={styles.projectsContainer}
       >
-        <Flex  >
+         <Flex className={styles.projectsContainer}>
           {displayedProjects.map((post) => (
             <ProjectCard
               key={post.slug}
