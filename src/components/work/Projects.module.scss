@@ -17,11 +17,16 @@
 }
 
 .projectsContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px; // Adjust the gap as needed
   
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
+    .projectCard {
+      flex: 1 1 calc(33.333% - 16px); // 3 columns
+      box-sizing: border-box;
+  
+      @media (max-width: 768px) {
+        flex: 1 1 100%; // 1 column on mobile
+      }
     }
   }
