@@ -101,7 +101,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
             <Flex
                 direction="column"
-                fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
+                fillWidth paddingX="s" 
+                paddingTop="8" // Reduced padding
+                paddingBottom="16" // Reduced padding
+                gap="s" // Reduced gap>
+                >
                 {(description?.trim()) &&(
                    <Flex style={{margin:"auto"}}
                         >
