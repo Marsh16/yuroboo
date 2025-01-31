@@ -121,6 +121,7 @@ export default function Home({
               alignItems="center"
               position="relative"
               style={{ margin: "auto" }}
+              className={styles.hidden}
             >
               <Flex
                 direction="column"
@@ -131,12 +132,14 @@ export default function Home({
                   background: "#8E6648",
                   margin: "auto",
                   color: "white"}}
+                className={styles.hidden}
               >
                 <Flex
                   direction="column"
                   height={15}
                   width={17}
                   style={{ margin: "auto" }}
+                  className={styles.hidden}
                 >
                   <Flex
                   >
@@ -145,13 +148,14 @@ export default function Home({
                         fontSize: "2rem",
                         fontWeight: "bold",
                       }}
+                      className={styles.hidden}
                     >
                       WELCOME
                     </Text>
                   </Flex>
                   <Flex
                   >
-                    <Text>
+                    <Text className={styles.hidden}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Curabitur finibus varius semper. Pellentesque rhoncus sed
                       nisl vitae sollicitudin. Nullam dignissim, diam non
@@ -170,6 +174,7 @@ export default function Home({
               alignItems="center"
               position="relative"
               style={{ margin: "auto" }}
+
             >
               <Flex
                 direction="column"
