@@ -70,12 +70,14 @@ export default function Home({
   const { home, about, person } = renderContent(t);
   return (
     <Flex
+      style={{ overflowX: "hidden", overflowY: "auto" }} // Ensure no horizontal overflow and handle vertical scrolling
+    >
+    <Flex
       maxWidth="m"
       fillWidth
       gap="xl"
       direction="column"
       alignItems="center"
-      style={{ overflowX: "hidden" }} // Ensure no horizontal overflow
     >
       <script
         type="application/ld+json"
@@ -313,6 +315,7 @@ export default function Home({
           </Flex>
         </Flex>
       </RevealFx>
+    </Flex>
     </Flex>
   );
   }
