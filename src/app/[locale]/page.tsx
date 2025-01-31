@@ -174,6 +174,7 @@ export default function Home({
               alignItems="center"
               position="relative"
               style={{ margin: "auto" }}
+              className={styles.mobileCircle}
 
             >
               <Flex
@@ -184,12 +185,16 @@ export default function Home({
                 style={{
                   margin: "auto",
                   color: "white"}}
+                  className={styles.mobileCircle}
+
               >
                 <Flex
                   direction="column"
                   height={15}
                   width={17}
                   style={{ margin: "auto" }}
+                  className={styles.mobileCircle}
+
                 >
                   <Flex
                   >
@@ -203,7 +208,7 @@ export default function Home({
                       WELCOME
                     </Text>
                   </Flex>
-                  <Flex
+                  <Flex  className={styles.mobileCircle}
                   >
                     <Text  style={{ color: "#624633"}}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
