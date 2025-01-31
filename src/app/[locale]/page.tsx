@@ -309,7 +309,6 @@ export default function Home({
                   fontWeight: "bold",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "20px",
                 }}
               >
                 WELCOME
@@ -326,7 +325,6 @@ export default function Home({
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "20px",
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -363,8 +361,6 @@ export default function Home({
                   fontWeight: "bold",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "20px",
-
                 }}
               >
                 WELCOME
@@ -381,7 +377,6 @@ export default function Home({
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "20px",
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
