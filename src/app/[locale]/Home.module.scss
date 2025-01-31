@@ -1,32 +1,74 @@
 @media (--s) {
-    .mobile {
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-    }
+  .mobile {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text{
+    margin: 10px 0;
+  }
 }
 
 .image-container {
 
-    width: 100%;
-  
-    > div {
-      position: unset !important;
-    }
-  
+  width: 100%;
+
+  >div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+
+  @media (--s) {
     .image {
       object-fit: contain;
-      width: 100% !important;
+      width: 50% !important;
       position: relative !important;
       height: unset !important;
     }
+  }
+}
 
-    @media (--s) {
-      .image {
-        object-fit: contain;
-        width: 50% !important;
-        position: relative !important;
-        height: unset !important;
-      }
+  // Define breakpoints
+$breakpoint-mobile: 768px;
+
+.responsive-flex {
+  flex-direction: row;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
   }
+}
+
+.responsive-text-flex {
+  margin: auto;
+  text-align: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 10px 0;
   }
+}
+
+.responsive-image-flex {
+  margin: auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 10px 0;
+  }
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    height: auto;
+  }
+}

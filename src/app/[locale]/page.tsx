@@ -22,39 +22,8 @@ import { useTranslations } from "next-intl";
 import { Column } from "@/once-ui/components/Column";
 import Image from "next/image";
 import styles from "./Home.module.scss";
-import styled from "@emotion/styled";
 import { Span } from "next/dist/trace";
 
-const ResponsiveFlex = styled(Flex)`
-  flex-direction: row;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const ResponsiveTextFlex = styled(Flex)`
-  margin: auto;
-  text-align: center;
-  @media (max-width: 768px) {
-    margin: 10px 0;
-  }
-`;
-
-const ResponsiveImageFlex = styled(Flex)`
-  margin: auto;
-  @media (max-width: 768px) {
-    margin: 10px 0;
-  }
-`;
-
-const ResponsiveImage = styled(Image)`
-  width: 100%;
-  height: auto;
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-  }
-`;
 
 export async function generateMetadata({
   params: { locale },
@@ -100,12 +69,13 @@ export default function Home({
   const t = useTranslations();
   const { home, about, person } = renderContent(t);
   return (
-    <ResponsiveFlex
+    <Flex
       maxWidth="m"
       fillWidth
       gap="xl"
       direction="column"
       alignItems="center"
+      className={styles.mobile}
     >
       <script
         type="application/ld+json"
@@ -131,35 +101,39 @@ export default function Home({
       />
 
       <RevealFx translateY="4" fillWidth justifyContent="flex-start">
-        <ResponsiveFlex
+        <Flex
           fillWidth
           direction="row"
           radius="l-8"
           style={{
             background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
           }}
+          className={styles.mobile}
         >
-          <ResponsiveFlex direction="column" fillWidth>
+          <Flex direction="column" fillWidth className={styles.mobile}>
             <Column
               fillWidth
               alignItems="center"
               position="relative"
               style={{ margin: "auto" }}
             >
-              <ResponsiveFlex
+              <Flex
                 direction="column"
                 height={25}
                 width={25}
 				gap="20"
                 style={{ borderRadius: "100%", background: "#8E6648" }}
+                className={styles.mobile}
               >
-				<ResponsiveFlex
+				<Flex
                 direction="column"
                 height={15}
                 width={17}
                 style={{margin: "auto"  }}
+                className={styles.mobile}
               >
-                <ResponsiveTextFlex style={{ margin: "auto", color: "white" }}>
+                <Flex style={{ margin: "auto", color: "white" }}
+                className={styles.mobile}>
                   <Text
                     style={{
                       fontSize: "2rem",
@@ -168,8 +142,8 @@ export default function Home({
                   >
                     WELCOME
                   </Text>
-                </ResponsiveTextFlex>
-				<ResponsiveTextFlex style={{ margin: "auto", color: "white" }}>
+                </Flex>
+				<Flex style={{ margin: "auto", color: "white" }} className={styles.text}>
                 <Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
@@ -177,36 +151,36 @@ export default function Home({
                   gravida, quam justo viverra nibh, ut varius massa elit eget
                   massa. Maecenas blandit enim neque, quis accumsan
                 </Text>
-				</ResponsiveTextFlex>
-				</ResponsiveFlex>
-              </ResponsiveFlex>
+				</Flex>
+				</Flex>
+              </Flex>
             </Column>
-          </ResponsiveFlex>
+          </Flex>
 
-          <ResponsiveImageFlex direction="column">
+          <Flex direction="column" className={styles.mobile}>
             <Column fillWidth alignItems="center" gap="32" position="relative">
-              <ResponsiveImage
+              <Image
                 src="/images/banner.png"
                 width={500}
                 height={500}
                 alt="Picture of the author"
               />
             </Column>
-          </ResponsiveImageFlex>
-        </ResponsiveFlex>
+          </Flex>
+        </Flex>
       </RevealFx>
       <RevealFx translateY="12" delay={0.4}>
-        <ResponsiveFlex fillWidth direction="row" radius="l-8">
-          <ResponsiveImageFlex direction="column" fillWidth style={{ margin: "auto" }}>
-            <ResponsiveImage
+        <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
+          <Flex direction="column" className={styles.mobile} fillWidth style={{ margin: "auto" }}>
+            <Image
               src="/images/banner.png"
               width={500}
               height={500}
               alt="Picture of the author"
             />
             =
-          </ResponsiveImageFlex>
-          <ResponsiveTextFlex direction="column" fillWidth style={{ margin: "auto" }}>
+          </Flex>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.text}>
             <Text style={{ marginBottom: "auto", color: "white" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
@@ -214,12 +188,12 @@ export default function Home({
               justo viverra nibh, ut varius massa elit eget massa. Maecenas
               blandit enim neque, quis accumsan{" "}
             </Text>
-          </ResponsiveTextFlex>
-        </ResponsiveFlex>
+          </Flex>
+        </Flex>
       </RevealFx>
       <RevealFx translateY="12" delay={0.4}>
-        <ResponsiveFlex fillWidth direction="row" radius="l-8">
-          <ResponsiveTextFlex direction="column" fillWidth style={{ margin: "auto" }}>
+        <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.text}>
             <Text style={{ margin: "auto", color: "white" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
@@ -227,42 +201,18 @@ export default function Home({
               justo viverra nibh, ut varius massa elit eget massa. Maecenas
               blandit enim neque, quis accumsan{" "}
             </Text>
-          </ResponsiveTextFlex>
-          <ResponsiveImageFlex direction="column" fillWidth style={{ margin: "auto" }}>
-            <ResponsiveImage
+          </Flex>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.image}>
+            <Image
               src="/images/banner.png"
               width={500}
               height={500}
               alt="Picture of the author"
             />
-          </ResponsiveImageFlex>
-        </ResponsiveFlex>
+          </Flex>
+        </Flex>
       </RevealFx>
+    </Flex> 
+    );
+  }
 
-      {/* <Flex fillWidth direction="column" radius="l-8">
-      <RevealFx translateY="12" delay={0.4}>
-        <ResponsiveFlex fillWidth radius="l-8">
-          <ResponsiveTextFlex direction="column" fillWidth>
-            <Text style={{ margin: 'auto', color: 'white' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              finibus varius semper. Pellentesque rhoncus sed nisl vitae
-              sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
-              justo viverra nibh, ut varius massa elit eget massa. Maecenas
-              blandit enim neque, quis accumsan{' '}
-            </Text>
-          </ResponsiveTextFlex>
-          <ResponsiveImageFlex direction="column" fillWidth>
-            <ResponsiveImage
-              src="/images/banner.png"
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-          </ResponsiveImageFlex>
-        </ResponsiveFlex>
-      </RevealFx>
-    </Flex> */}
-
-    </ResponsiveFlex>
-  );
-}
