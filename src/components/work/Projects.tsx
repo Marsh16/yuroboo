@@ -23,9 +23,7 @@ export function Projects({ range, locale }: ProjectsProps) {
     return (
       <Flex
         fillWidth
-        gap="xl"
         marginBottom="40"
-        paddingX="l"
       >
          <Flex className={styles.projectsContainer}>
           {displayedProjects.map((post) => (
