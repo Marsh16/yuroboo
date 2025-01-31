@@ -267,7 +267,7 @@ export default function Home({
               >
                 WELCOME
               </Text>
-              <Flex className="line"></Flex>
+              <Flex className={styles.line}></Flex>
               <Text
                 style={{
                   marginBottom: "auto",
@@ -309,7 +309,7 @@ export default function Home({
               >
                 WELCOME
               </Text>
-              <Flex className="line"></Flex>
+              <Flex className={styles.line}></Flex>
               <Text
                 style={{
                   margin: "auto",
@@ -356,14 +356,14 @@ export default function Home({
               >
                 WELCOME
               </Text>
-              <Flex className="line"></Flex>
+              <Flex className={styles.line}></Flex>
               <Text
                 style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "20px" 
+                  paddingTop: "30px" 
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
