@@ -70,12 +70,8 @@ export default function Home({
   const { home, about, person } = renderContent(t);
   return (
     <Flex
-      maxWidth="m"
-      fillWidth
-      gap="xl"
-      direction="column"
-      alignItems="center"
-    >
+			fillWidth maxWidth="m"
+			direction="column">
       <script
         type="application/ld+json"
         suppressHydrationWarning
