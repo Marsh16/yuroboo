@@ -100,7 +100,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 </Flex>
             )}
             <Flex
-                mobileDirection="column"
+                direction="column"
                 fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
                 {(description?.trim()) &&(
                    <Flex style={{margin:"auto"}}
