@@ -102,27 +102,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <Flex
                 mobileDirection="column"
                 fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
-                {title && (
-                    <Flex
-                        flex={5}>
-                        <Heading
-                            as="h2"
-                            wrap="balance"
-                            variant="heading-strong-xl">
-                            {title}
-                        </Heading>
-                    </Flex>
-                )}
-                {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-                    <Flex
+                {(description?.trim()) && (
+                   <Flex style={{margin:"auto"}}
                         flex={7} direction="column"
                         gap="16">
-                        {avatars?.length > 0 && (
-                            <AvatarGroup
-                                avatars={avatars}
-                                size="m"
-                                reverseOrder/>
-                        )}
                         {description?.trim() && (
                             <Text
                                 wrap="balance"
@@ -131,17 +114,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 {description}
                             </Text>
                         )}
-                        {content?.trim() && (
-                            <SmartLink
-                                suffixIcon="chevronRight"
-                                style={{margin: '0', width: 'fit-content'}}
-                                href={href}>
-                                    <Text
-                                        variant="body-default-s">
-                                       {t("projectCard.label")}
-                                    </Text>
-                            </SmartLink>
-                        )}
+                    </Flex>
+                )}
+                {title && (
+                    <Flex style={{margin:"auto"}}
+                        flex={5}>
+                        <Heading
+                            as="h2"
+                            wrap="balance"
+                            variant="heading-strong-xl">
+                            {title}
+                        </Heading>
                     </Flex>
                 )}
             </Flex>

@@ -2,6 +2,7 @@ import { getPosts } from '@/app/utils/utils';
 import { Flex } from '@/once-ui/components';
 
 import { ProjectCard } from '@/components';
+import styles from "./Projects.module.scss";
 
 interface ProjectsProps {
     range?: [number, number?];
@@ -20,19 +21,28 @@ export function Projects({ range, locale }: ProjectsProps) {
         : sortedProjects;
 
     return (
-        <Flex
-            fillWidth gap="xl" marginBottom="40" paddingX="l"
-            direction="column">
-            {displayedProjects.map((post) => (
-                <ProjectCard
-                    key={post.slug}
-                    href={`work/${post.slug}`}
-                    images={post.metadata.images}
-                    title={post.metadata.title}
-                    description={post.metadata.summary}
-                    content={post.content}
-                    avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}/>
-            ))}
-        </Flex>
+      <Flex
+        fillWidth
+        gap="xl"
+        marginBottom="40"
+        paddingX="l"
+        direction="column"
+        className={styles.projectsContainer}
+      >
+          {displayedProjects.map((post) => (
+            <ProjectCard
+              key={post.slug}
+              href={`work/${post.slug}`}
+              images={post.metadata.images}
+              title={post.metadata.title}
+              description={post.metadata.summary}
+              content={post.content}
+              avatars={
+                post.metadata.team?.map((member) => ({ src: member.avatar })) ||
+                []
+              }
+            />
+          ))}
+      </Flex>
     );
 }

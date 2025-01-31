@@ -15,3 +15,13 @@
     left: -2rem;
     transition: var(--transition-micro-medium);
 }
+
+.projectsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; // Adjust the gap as needed
+  
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }

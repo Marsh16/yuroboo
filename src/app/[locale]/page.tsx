@@ -143,7 +143,7 @@ export default function Home({
                     WELCOME
                   </Text>
                 </Flex>
-				<Flex style={{ margin: "auto", color: "white" }}>
+				<Flex style={{ margin: "auto", color: "white" }} className={styles.mobile}>
                 <Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
@@ -180,7 +180,7 @@ export default function Home({
             />
             =
           </Flex>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.mobile}>
             <Text style={{ marginBottom: "auto", color: "white", padding: "20px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
@@ -193,7 +193,7 @@ export default function Home({
       </RevealFx>
       <RevealFx translateY="12" delay={0.4}>
         <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.mobile}>
             <Text style={{ margin: "auto", color: "white" , padding: "20px"  }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
