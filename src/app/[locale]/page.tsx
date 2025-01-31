@@ -21,8 +21,41 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Column } from "@/once-ui/components/Column";
 import Image from "next/image";
+import styles from "./Home.module.scss";
 import styled from "@emotion/styled";
 import { Span } from "next/dist/trace";
+
+const ResponsiveFlex = styled(Flex)`
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const ResponsiveTextFlex = styled(Flex)`
+  margin: auto;
+  text-align: center;
+  @media (max-width: 768px) {
+    margin: 10px 0;
+  }
+`;
+
+const ResponsiveImageFlex = styled(Flex)`
+  margin: auto;
+  @media (max-width: 768px) {
+    margin: 10px 0;
+  }
+`;
+
+const ResponsiveImage = styled(Image)`
+  width: 100%;
+  height: auto;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -233,34 +266,3 @@ export default function Home({
     </ResponsiveFlex>
   );
 }
-
-const ResponsiveFlex = styled(Flex)`
-  flex-direction: row;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const ResponsiveTextFlex = styled(Flex)`
-  margin: auto;
-  text-align: center;
-  @media (max-width: 768px) {
-    margin: 10px 0;
-  }
-`;
-
-const ResponsiveImageFlex = styled(Flex)`
-  margin: auto;
-  @media (max-width: 768px) {
-    margin: 10px 0;
-  }
-`;
-
-const ResponsiveImage = styled(Image)`
-  width: 100%;
-  height: auto;
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-  }
-`;
