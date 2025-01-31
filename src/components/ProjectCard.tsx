@@ -107,9 +107,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         flex={7} >
                         {description?.trim() && (
                             <Text
-                                as="h3"
                                 wrap="balance"
-                                variant="body-default-s"
+                                variant="body-default-l"
                                 onBackground="neutral-weak"
                                 align="center"
                                 style={{color:"#624633"}}>
