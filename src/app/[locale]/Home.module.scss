@@ -5,12 +5,8 @@
     align-items: center;
   }
 
-  .circle {
-    object-fit: contain;
-    width: 50% !important;
-    position: relative !important;
-    height: unset !important;
-    height: auto;
+  .hidden {
+    display: none;
   }
 
   .text {
@@ -37,6 +33,7 @@
     .image {
       object-fit: contain;
       width: 50% !important;
+      border-radius: 20px;
       position: relative !important;
       height: unset !important;
       height: auto;

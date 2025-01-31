@@ -143,7 +143,7 @@ export default function Home({
                     WELCOME
                   </Text>
                 </Flex>
-				<Flex style={{ margin: "auto", color: "white" }} className={styles.text}>
+				<Flex style={{ margin: "auto", color: "white" }}>
                 <Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
@@ -157,7 +157,7 @@ export default function Home({
             </Column>
           </Flex>
 
-          <Flex direction="column" className={styles.mobile}>
+          <Flex direction="column" className={styles.hidden}>
             <Column fillWidth alignItems="center" gap="32" position="relative">
               <Image
                 src="/images/banner.png"
@@ -180,26 +180,26 @@ export default function Home({
             />
             =
           </Flex>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.text}>
-            <Text style={{ marginBottom: "auto", color: "white" }}>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+            <Text style={{ marginBottom: "auto", color: "white", padding: "20px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
               sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
               justo viverra nibh, ut varius massa elit eget massa. Maecenas
-              blandit enim neque, quis accumsan{" "}
+              blandit enim neque, quis accumsan
             </Text>
           </Flex>
         </Flex>
       </RevealFx>
       <RevealFx translateY="12" delay={0.4}>
         <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.text}>
-            <Text style={{ margin: "auto", color: "white" }}>
+          <Flex direction="column" fillWidth style={{ margin: "auto" }}>
+            <Text style={{ margin: "auto", color: "white" , padding: "20px"  }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
               sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
               justo viverra nibh, ut varius massa elit eget massa. Maecenas
-              blandit enim neque, quis accumsan{" "}
+              blandit enim neque, quis accumsan
             </Text>
           </Flex>
           <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.image}>
