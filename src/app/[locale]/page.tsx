@@ -70,8 +70,13 @@ export default function Home({
   const { home, about, person } = renderContent(t);
   return (
     <Flex
-			fillWidth maxWidth="m"
-			direction="column">
+      maxWidth="m"
+      fillWidth
+      gap="xl"
+      direction="column"
+      alignItems="center"
+      style={{ overflowX: "hidden" }} // Ensure no horizontal overflow
+    >
       <script
         type="application/ld+json"
         suppressHydrationWarning
