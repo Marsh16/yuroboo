@@ -248,6 +248,7 @@ export default function Home({
                 width={500}
                 height={500}
                 alt="Picture of the author"
+                style={{ borderRadius: "20px", }}
               />
             </Flex>
             <Flex
@@ -345,6 +346,7 @@ export default function Home({
                 width={500}
                 height={500}
                 alt="Picture of the author"
+                style={{ borderRadius: "20px", }}
               />
             </Flex>
             <Flex
