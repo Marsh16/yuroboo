@@ -352,7 +352,7 @@ export default function Home({
             <Flex
               direction="column"
               fillWidth
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", paddingTop: "20px" }}
               className={styles.show}
             >
               <Text
@@ -379,6 +379,7 @@ export default function Home({
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
+                  paddingTop: "20px" 
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
