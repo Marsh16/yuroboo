@@ -123,7 +123,7 @@ export default function Home({
                 width={25}
 				gap="20"
                 style={{ borderRadius: "100%", background: "#8E6648" }}
-                className={styles.circle}
+                className={styles.mobile}
               >
 				<Flex
                 direction="column"
