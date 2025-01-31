@@ -100,7 +100,12 @@ export default function Home({
         }}
       />
 
-      <RevealFx translateY="4" fillWidth justifyContent="flex-start"  className={styles.mobile}>
+      <RevealFx
+        translateY="4"
+        fillWidth
+        justifyContent="flex-start"
+        className={styles.mobile}
+      >
         <Flex
           fillWidth
           direction="row"
@@ -122,38 +127,41 @@ export default function Home({
                 direction="column"
                 height={25}
                 width={25}
-				        gap="20"
-                style={{ borderRadius: "100%", background: "#8E6648" }}
-                className={styles.mobile}
+                gap="20"
+                className={styles.mobileCircle}
               >
-				<Flex
-                direction="column"
-                height={15}
-                width={17}
-                style={{margin: "auto"  }}
-                className={styles.mobile}
-              >
-                <Flex style={{ margin: "auto", color: "white" }}
-                className={styles.mobile}>
-                  <Text
-                    style={{
-                      fontSize: "2rem",
-                      fontWeight: "bold",
-                    }}
+                <Flex
+                  direction="column"
+                  height={15}
+                  width={17}
+                  style={{ margin: "auto" }}
+                  className={styles.mobile}
+                >
+                  <Flex
+                    className={styles.mobile}
                   >
-                    WELCOME
-                  </Text>
+                    <Text
+                      style={{
+                        fontSize: "2rem",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      WELCOME
+                    </Text>
+                  </Flex>
+                  <Flex
+                    className={styles.mobile}
+                  >
+                    <Text>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Curabitur finibus varius semper. Pellentesque rhoncus sed
+                      nisl vitae sollicitudin. Nullam dignissim, diam non
+                      consectetur gravida, quam justo viverra nibh, ut varius
+                      massa elit eget massa. Maecenas blandit enim neque, quis
+                      accumsan
+                    </Text>
+                  </Flex>
                 </Flex>
-				<Flex style={{ margin: "auto", color: "white" }} className={styles.mobile}>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
-                  vitae sollicitudin. Nullam dignissim, diam non consectetur
-                  gravida, quam justo viverra nibh, ut varius massa elit eget
-                  massa. Maecenas blandit enim neque, quis accumsan
-                </Text>
-				</Flex>
-				</Flex>
               </Flex>
             </Column>
           </Flex>
@@ -170,9 +178,14 @@ export default function Home({
           </Flex>
         </Flex>
       </RevealFx>
-      <RevealFx translateY="12" delay={0.4}  className={styles.mobile}>
+      <RevealFx translateY="12" delay={0.4} className={styles.mobile}>
         <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
-          <Flex direction="column" className={styles.mobile} fillWidth style={{ margin: "auto" }}>
+          <Flex
+            direction="column"
+            className={styles.mobile}
+            fillWidth
+            style={{ margin: "auto" }}
+          >
             <Image
               src="/images/banner.png"
               width={500}
@@ -181,8 +194,15 @@ export default function Home({
             />
             =
           </Flex>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.mobile}>
-            <Text style={{ marginBottom: "auto", color: "white", padding: "20px" }}>
+          <Flex
+            direction="column"
+            fillWidth
+            style={{ margin: "auto" }}
+            className={styles.mobile}
+          >
+            <Text
+              style={{ marginBottom: "auto", padding: "20px" ,color: "#624633"}}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
               sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
@@ -194,8 +214,13 @@ export default function Home({
       </RevealFx>
       <RevealFx translateY="12" delay={0.4} className={styles.mobile}>
         <Flex fillWidth direction="row" radius="l-8" className={styles.mobile}>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.hidden}>
-            <Text style={{ margin: "auto", color: "white" , padding: "20px"  }}>
+          <Flex
+            direction="column"
+            fillWidth
+            style={{ margin: "auto" }}
+            className={styles.hidden}
+          >
+            <Text style={{ margin: "auto", padding: "20px" , color: "#624633"}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
               sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
@@ -203,7 +228,12 @@ export default function Home({
               blandit enim neque, quis accumsan
             </Text>
           </Flex>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.image}>
+          <Flex
+            direction="column"
+            fillWidth
+            style={{ margin: "auto" }}
+            className={styles.image}
+          >
             <Image
               src="/images/banner.png"
               width={500}
@@ -211,8 +241,13 @@ export default function Home({
               alt="Picture of the author"
             />
           </Flex>
-          <Flex direction="column" fillWidth style={{ margin: "auto" }} className={styles.show}>
-            <Text style={{ margin: "auto", color: "white" , padding: "20px"  }}>
+          <Flex
+            direction="column"
+            fillWidth
+            style={{ margin: "auto", paddingTop: "20px" }}
+            className={styles.show}
+          >
+            <Text style={{ margin: "auto", padding: "20px" ,color: "#624633"}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               finibus varius semper. Pellentesque rhoncus sed nisl vitae
               sollicitudin. Nullam dignissim, diam non consectetur gravida, quam
@@ -222,7 +257,7 @@ export default function Home({
           </Flex>
         </Flex>
       </RevealFx>
-    </Flex> 
-    );
+    </Flex>
+  );
   }
 
