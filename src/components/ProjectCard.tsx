@@ -104,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
                 {(description?.trim()) &&(
                    <Flex style={{margin:"auto"}}
-                        flex={7} >
+                        >
                         {description?.trim() && (
                             <Text
                                 wrap="balance"
@@ -120,7 +120,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 )}
                 {title && (
                     <Flex style={{margin:"auto"}}
-                        flex={5}>
+                       >
                         <Heading
                             as="h2"
                             wrap="balance"
