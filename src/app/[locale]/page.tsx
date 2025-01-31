@@ -132,7 +132,8 @@ export default function Home({
                   background: "#8E6648",
                   margin: "auto",
                   color: "white", 
-                  alignItems: "center"}}
+                  alignItems: "center",
+                  textAlign: "center"}}
                 className={styles.mobile}
               >
                 <Flex
