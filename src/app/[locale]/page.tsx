@@ -316,7 +316,7 @@ export default function Home({
                   textAlign: "end",
                 }}
               >
-                Dress Up Your Crew
+                Unleash Your Creativity
               </Text>
               <Flex
                 className={styles.line}
@@ -335,14 +335,12 @@ export default function Home({
                   textAlign: "end",
                 }}
               >
-                Is your Labubu feeling a little bare? Does your Smiski need a
-                touch of flair? Or maybe your Hirono is craving a pop of color?
-                Look no further! Our extensive collection of crochet accessories
-                offers endless possibilities for dressing up your favorite vinyl
-                toys. Explore a rainbow of colors, textures, and designs, from
-                cozy beanies and stylish scarves to elegant dresses and playful
-                capes. Each piece is lovingly handcrafted with high-quality yarn
-                and designed for a perfect fit.{" "}
+                Have a specific color in mind? Dreaming of a unique design? We
+                love bringing your crochet accessory ideas to life! Our custom
+                crochet service allows you to create the perfect pieces for your
+                Labubu, Smiski, or Hirono. Whether you want to match your own
+                style, create a themed outfit, or simply add a personal touch,
+                we'll work with you every step of the way.{" "}
               </Text>
             </Flex>
             <Flex
