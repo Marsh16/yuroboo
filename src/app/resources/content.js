@@ -15,22 +15,17 @@ const createContent = (t) => {
         {
             name: 'Line',
             icon: 'line',
-            link: 'https://github.com/Marsh16',
+            link: 'https://line.me/ti/p/7KuOuTib5B',
         },
         {
             name: 'Instagram',
             icon: 'instagram',
-            link: 'https://www.linkedin.com/in/marsha-alexis-likorawung-16b13a267/',
-        },
-        {
-            name: 'Whatsapp',
-            icon: 'whatsapp',
-            link: 'mailto:marshaalexis16@gmail.com',
+            link: 'https://www.instagram.com/yuro.boo/',
         },
         {
             name: 'Shopee',
             icon: 'shopee',
-            link: 'mailto:marshaalexis16@gmail.com',
+            link: 'https://shopee.co.id/yuro_boo',
         },
     ]
 

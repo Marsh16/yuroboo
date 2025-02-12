@@ -39,7 +39,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             setIsTransitioning(false);
             const nextIndex = (activeIndex + 1) % images.length;
             handleControlClick(nextIndex);
-
         }
     };
 
@@ -54,88 +53,97 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     };
 
     return (
-        <Flex
-            fillWidth gap="m"
-            direction="column">
-            {images[activeIndex] && <Flex onClick={handleImageClick}>
-                <RevealFx
-                    style={{width: '100%'}}
-                    delay={0.4}
-                    trigger={isTransitioning}
-                    speed="fast">
-                    <SmartImage
-                        tabIndex={0}
-                        radius="l"
-                        alt={title}
-                        aspectRatio="4 / 3"
-                        src={images[activeIndex]}
-                        style={{
-                            border: '1px solid var(--neutral-alpha-weak)',
-                            ...(images.length > 1 && {
-                                cursor: 'pointer',
-                            }),
-                        }}/>
-                </RevealFx>
-            </Flex>}
-            {images.length > 1 && (
-                <Flex
-                    gap="4" paddingX="s"
-                    fillWidth
-                    justifyContent="center">
-                    {images.map((_, index) => (
-                        <Flex
-                            key={index}
-                            onClick={() => handleControlClick(index)}
-                            style={{
-                                background: activeIndex === index 
-                                    ? 'var(--neutral-on-background-strong)' 
-                                    : 'var(--neutral-alpha-medium)',
-                                cursor: 'pointer',
-                                transition: 'background 0.3s ease',
-                            }}
-                            fillWidth
-                            height="2">
-                        </Flex>
-                    ))}
-                </Flex>
-            )}
+        <SmartLink href={href} style={{ textDecoration: 'none' }}>
             <Flex
+                fillWidth
+                gap="m"
                 direction="column"
-                fillWidth paddingX="s" 
-                paddingTop="8" // Reduced padding
-                paddingBottom="16" // Reduced padding
-                gap="s" // Reduced gap>
-                >
-                {(description?.trim()) &&(
-                   <Flex style={{margin:"auto"}}
+                style={{ cursor: 'pointer' }}
+            >
+                {images[activeIndex] && (
+                    <Flex onClick={handleImageClick}>
+                        <RevealFx
+                            style={{ width: '100%' }}
+                            delay={0.4}
+                            trigger={isTransitioning}
+                            speed="fast"
                         >
-                        {description?.trim() && (
+                            <SmartImage
+                                tabIndex={0}
+                                radius="l"
+                                alt={title}
+                                aspectRatio="4 / 3"
+                                src={images[activeIndex]}
+                                style={{
+                                    border: '1px solid var(--neutral-alpha-weak)',
+                                    ...(images.length > 1 && {
+                                        cursor: 'pointer',
+                                    }),
+                                }}
+                            />
+                        </RevealFx>
+                    </Flex>
+                )}
+                {images.length > 1 && (
+                    <Flex
+                        gap="4"
+                        paddingX="s"
+                        fillWidth
+                        justifyContent="center"
+                    >
+                        {images.map((_, index) => (
+                            <Flex
+                                key={index}
+                                onClick={() => handleControlClick(index)}
+                                style={{
+                                    background: activeIndex === index
+                                        ? 'var(--neutral-on-background-strong)'
+                                        : 'var(--neutral-alpha-medium)',
+                                    cursor: 'pointer',
+                                    transition: 'background 0.3s ease',
+                                }}
+                                fillWidth
+                                height="2"
+                            />
+                        ))}
+                    </Flex>
+                )}
+                <Flex
+                    direction="column"
+                    fillWidth
+                    paddingX="s"
+                    paddingTop="8" // Reduced padding
+                    paddingBottom="16" // Reduced padding
+                    gap="s" // Reduced gap
+                >
+                    {description?.trim() && (
+                        <Flex style={{ margin: "auto", marginBottom: "8px" }}>
                             <Text
                                 wrap="balance"
                                 variant="body-default-xl"
                                 onBackground="neutral-weak"
                                 align="center"
-                                style={{color:"#624633"}}>
+                                style={{ color: "#624633" }}
+                            >
                                 {description}
                             </Text>
-                        )}
-                    </Flex>
-                    
-                )}
-                {title && (
-                    <Flex style={{margin:"auto"}}
-                       >
-                        <Heading
-                            as="h2"
-                            wrap="balance"
-                            variant="heading-strong-xl"
-                            align="center"
-                            style={{color:"#624633"}}>
-                            {title}
-                        </Heading>
-                    </Flex>
-                )}
+                        </Flex>
+                    )}
+                    {title && (
+                        <Flex style={{ margin: "auto", marginBottom: "8px" }}>
+                            <Heading
+                                as="h2"
+                                wrap="balance"
+                                variant="heading-strong-xl"
+                                align="center"
+                                style={{ color: "#624633" }}
+                            >
+                                {title}
+                            </Heading>
+                        </Flex>
+                    )}
+                </Flex>
             </Flex>
-        </Flex>
+        </SmartLink>
     );
 };
