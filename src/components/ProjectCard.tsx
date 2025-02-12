@@ -75,6 +75,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 aspectRatio="4 / 3"
                                 src={images[activeIndex]}
                                 style={{
+                                    width: '100%', // Ensure the image takes up the full width of its container
+                                    height: 'auto', // Maintain aspect ratio
                                     border: '1px solid var(--neutral-alpha-weak)',
                                     ...(images.length > 1 && {
                                         cursor: 'pointer',

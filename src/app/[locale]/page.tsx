@@ -150,12 +150,11 @@ export default function Home({
                     </Flex>
                     <Flex>
                       <Text className={styles.hidden}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur finibus varius semper. Pellentesque rhoncus
-                        sed nisl vitae sollicitudin. Nullam dignissim, diam non
-                        consectetur gravida, quam justo viverra nibh, ut varius
-                        massa elit eget massa. Maecenas blandit enim neque, quis
-                        accumsan
+                        Handmade with love, just for your little companions.
+                        Welcome to our shop filled with charming crochet
+                        accessories designed to fit Labubu, Smiski, and Hirono
+                        perfectly. Each piece is crafted with care and attention
+                        to detail.
                       </Text>
                     </Flex>
                   </Flex>
@@ -200,12 +199,11 @@ export default function Home({
                     </Flex>
                     <Flex className={styles.mobileCircle}>
                       <Text style={{ color: "#624633" }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur finibus varius semper. Pellentesque rhoncus
-                        sed nisl vitae sollicitudin. Nullam dignissim, diam non
-                        consectetur gravida, quam justo viverra nibh, ut varius
-                        massa elit eget massa. Maecenas blandit enim neque, quis
-                        accumsan
+                        Handmade with love, just for your little companions.
+                        Welcome to our shop filled with charming crochet
+                        accessories designed to fit Labubu, Smiski, and Hirono
+                        perfectly. Each piece is crafted with care and attention
+                        to detail.
                       </Text>
                     </Flex>
                   </Flex>
@@ -244,11 +242,11 @@ export default function Home({
               style={{ margin: "auto" }}
             >
               <Image
-                src="/images/banner.png"
+                src="/images/projects/products/Crochet Labubu Alien Costume.jpeg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
-                style={{ borderRadius: "20px", }}
+                style={{ borderRadius: "20px" }}
               />
             </Flex>
             <Flex
@@ -266,13 +264,16 @@ export default function Home({
                   color: "#624633",
                 }}
               >
-                WELCOME
+                Dress Up Your Crew
               </Text>
-              <Flex className={styles.line} style={{
+              <Flex
+                className={styles.line}
+                style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
-                }}></Flex>
+                }}
+              ></Flex>
               <Text
                 style={{
                   marginBottom: "auto",
@@ -280,11 +281,14 @@ export default function Home({
                   color: "#624633",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
-                vitae sollicitudin. Nullam dignissim, diam non consectetur
-                gravida, quam justo viverra nibh, ut varius massa elit eget
-                massa. Maecenas blandit enim neque, quis accumsan
+                Is your Labubu feeling a little bare? Does your Smiski need a
+                touch of flair? Or maybe your Hirono is craving a pop of color?
+                Look no further! Our extensive collection of crochet accessories
+                offers endless possibilities for dressing up your favorite vinyl
+                toys. Explore a rainbow of colors, textures, and designs, from
+                cozy beanies and stylish scarves to elegant dresses and playful
+                capes. Each piece is lovingly handcrafted with high-quality yarn
+                and designed for a perfect fit.{" "}
               </Text>
             </Flex>
           </Flex>
@@ -312,14 +316,17 @@ export default function Home({
                   textAlign: "end",
                 }}
               >
-                WELCOME
+                Dress Up Your Crew
               </Text>
-              <Flex className={styles.line} style={{
+              <Flex
+                className={styles.line}
+                style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                }}></Flex>
+                }}
+              ></Flex>
               <Text
                 style={{
                   margin: "auto",
@@ -328,11 +335,14 @@ export default function Home({
                   textAlign: "end",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
-                vitae sollicitudin. Nullam dignissim, diam non consectetur
-                gravida, quam justo viverra nibh, ut varius massa elit eget
-                massa. Maecenas blandit enim neque, quis accumsan
+                Is your Labubu feeling a little bare? Does your Smiski need a
+                touch of flair? Or maybe your Hirono is craving a pop of color?
+                Look no further! Our extensive collection of crochet accessories
+                offers endless possibilities for dressing up your favorite vinyl
+                toys. Explore a rainbow of colors, textures, and designs, from
+                cozy beanies and stylish scarves to elegant dresses and playful
+                capes. Each piece is lovingly handcrafted with high-quality yarn
+                and designed for a perfect fit.{" "}
               </Text>
             </Flex>
             <Flex
@@ -342,11 +352,11 @@ export default function Home({
               className={styles.image}
             >
               <Image
-                src="/images/banner.png"
+                src="/images/projects/products/Labubu Cape.jpeg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
-                style={{ borderRadius: "20px", }}
+                style={{ borderRadius: "20px" }}
               />
             </Flex>
             <Flex
@@ -365,28 +375,32 @@ export default function Home({
                   textAlign: "end",
                 }}
               >
-                WELCOME
+                Unleash Your Creativity
               </Text>
-              <Flex className={styles.line} style={{
+              <Flex
+                className={styles.line}
+                style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                }}></Flex>
+                }}
+              ></Flex>
               <Text
                 style={{
                   margin: "auto",
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                   paddingTop: "20px" 
+                  paddingTop: "20px",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur finibus varius semper. Pellentesque rhoncus sed nisl
-                vitae sollicitudin. Nullam dignissim, diam non consectetur
-                gravida, quam justo viverra nibh, ut varius massa elit eget
-                massa. Maecenas blandit enim neque, quis accumsan
+                Have a specific color in mind? Dreaming of a unique design? We
+                love bringing your crochet accessory ideas to life! Our custom
+                crochet service allows you to create the perfect pieces for your
+                Labubu, Smiski, or Hirono. Whether you want to match your own
+                style, create a themed outfit, or simply add a personal touch,
+                we'll work with you every step of the way.{" "}
               </Text>
             </Flex>
           </Flex>
