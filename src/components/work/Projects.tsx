@@ -30,17 +30,17 @@ export function Projects({ range, locale }: ProjectsProps) {
         <Flex className={styles.projectCard}>
             <ProjectCard
               key={post.slug}
-              href={`work/${post.slug}`}
+              href={post.metadata.publishedAt}
               images={post.metadata.images}
               title={post.metadata.title}
               description={post.metadata.summary}
               content={post.content}
               avatars={
-                post.metadata.team?.map((member) => ({ src: member.avatar })) ||
-                []
+          post.metadata.team?.map((member) => ({ src: member.avatar })) ||
+          []
               }
             />
-            </Flex>
+        </Flex>
           ))}
         </Flex>
       </Flex>

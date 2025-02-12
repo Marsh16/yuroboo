@@ -379,7 +379,7 @@ export default function Home({
                   padding: "20px",
                   color: "#624633",
                   textAlign: "end",
-                  paddingTop: "20px" 
+                   paddingTop: "20px" 
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
