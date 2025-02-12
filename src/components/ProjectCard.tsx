@@ -76,7 +76,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 src={images[activeIndex]}
                                 style={{
                                     width: '100%', // Ensure the image takes up the full width of its container
-                                    height: 'auto', // Maintain aspect ratio
+                                    height: '200px', // Set a fixed height for the image
+                                    objectFit: 'cover', // Ensure the image covers the container without distortion
                                     border: '1px solid var(--neutral-alpha-weak)',
                                     ...(images.length > 1 && {
                                         cursor: 'pointer',
