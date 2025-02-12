@@ -198,13 +198,18 @@ export default function Home({
                       </Text>
                     </Flex>
                     <Flex className={styles.mobileCircle}>
-                      <Text style={{ color: "#624633" }}>
+                        <Text style={{ color: "#624633" }}>
                         Handmade with love, just for your little companions.
                         Welcome to our shop filled with charming crochet
                         accessories designed to fit Labubu, Smiski, and Hirono
                         perfectly. Each piece is crafted with care and attention
-                        to detail.
-                      </Text>
+                        to detail. Our collection includes a variety of styles
+                        and colors, ensuring that you will find the perfect
+                        accessory to match your toy's personality. From cozy
+                        hats to stylish outfits, we have everything you need to
+                        dress up your favorite vinyl toys. Explore our shop and
+                        discover the joy of handmade crochet accessories.
+                        </Text>
                     </Flex>
                   </Flex>
                 </Flex>
