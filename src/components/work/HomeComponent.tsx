@@ -248,6 +248,7 @@ export default function HomeComponent({ home, person }: HomeProps) {
                     padding: "20px",
                     color: "#624633",
                     textAlign: "end",
+                    marginBottom: "25px",
                   }}
                 ></Flex>
                 <Text
