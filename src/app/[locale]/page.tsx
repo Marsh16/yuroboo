@@ -8,7 +8,7 @@ import { baseURL, renderContent } from "@/app/resources";
 import { getTranslations } from "next-intl/server";
 import { Column } from "@/once-ui/components/Column";
 import Image from "next/image";
-import styles from "./Home.module.scss";
+import homeStyles from "./Home.module.scss";
 
 type PageProps = {
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -89,15 +89,15 @@ export default async function Home() {
             style={{
               background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
             }}
-            className={styles.mobile}
+            className={homeStyles.mobile}
           >
-            <Flex direction="column" fillWidth className={styles.hidden}>
+            <Flex direction="column" fillWidth className={homeStyles.hidden}>
               <Column
                 fillWidth
                 alignItems="center"
                 position="relative"
                 style={{ margin: "auto" }}
-                className={styles.hidden}
+                className={homeStyles.hidden}
               >
                 <Flex
                   direction="column"
@@ -110,14 +110,14 @@ export default async function Home() {
                     margin: "auto",
                     color: "white",
                   }}
-                  className={styles.hidden}
+                  className={homeStyles.hidden}
                 >
                   <Flex
                     direction="column"
                     height={15}
                     width={17}
                     style={{ margin: "auto" }}
-                    className={styles.hidden}
+                    className={homeStyles.hidden}
                   >
                     <Flex>
                       <Text
@@ -125,13 +125,13 @@ export default async function Home() {
                           fontSize: "2rem",
                           fontWeight: "bold",
                         }}
-                        className={styles.hidden}
+                        className={homeStyles.hidden}
                       >
                         WELCOME
                       </Text>
                     </Flex>
                     <Flex>
-                      <Text className={styles.hidden}>
+                      <Text className={homeStyles.hidden}>
                         Handmade with love, just for your little companions.
                         Welcome to our shop filled with charming crochet
                         accessories designed to fit Labubu, Smiski, and Hirono
@@ -145,12 +145,12 @@ export default async function Home() {
                 </Flex>
               </Column>
             </Flex>
-            <Flex direction="column" className={styles.show}>
+            <Flex direction="column" className={homeStyles.show}>
               <Column
                 fillWidth
                 alignItems="center"
                 style={{ margin: "auto" }}
-                className={styles.mobileCircle}
+                className={homeStyles.mobileCircle}
               >
                 <Flex
                   direction="column"
@@ -161,14 +161,14 @@ export default async function Home() {
                     margin: "auto",
                     color: "white",
                   }}
-                  className={styles.mobileCircle}
+                  className={homeStyles.mobileCircle}
                 >
                   <Flex
                     direction="column"
                     height={15}
                     width={17}
                     style={{ margin: "auto" }}
-                    className={styles.mobileCircle}
+                    className={homeStyles.mobileCircle}
                   >
                     <Flex>
                       <Text
@@ -181,7 +181,7 @@ export default async function Home() {
                         WELCOME
                       </Text>
                     </Flex>
-                    <Flex className={styles.mobileCircle}>
+                    <Flex className={homeStyles.mobileCircle}>
                       <Text style={{ color: "#624633" }}>
                         Handmade with love, just for your little companions.
                         Welcome to our shop filled with charming crochet
@@ -197,7 +197,7 @@ export default async function Home() {
               </Column>
             </Flex>
 
-            <Flex direction="column" className={styles.hidden}>
+            <Flex direction="column" className={homeStyles.hidden}>
               <Column
                 fillWidth
                 alignItems="center"
@@ -214,16 +214,16 @@ export default async function Home() {
             </Flex>
           </Flex>
         </RevealFx>
-        <RevealFx translateY="12" delay={0.4} className={styles.mobile}>
+        <RevealFx translateY="12" delay={0.4} className={homeStyles.mobile}>
           <Flex
             fillWidth
             direction="row"
             radius="l-8"
-            className={styles.mobile}
+            className={homeStyles.mobile}
           >
             <Flex
               direction="column"
-              className={styles.mobile}
+              className={homeStyles.mobile}
               fillWidth
               style={{ margin: "auto" }}
             >
@@ -239,7 +239,7 @@ export default async function Home() {
               direction="column"
               fillWidth
               style={{ margin: "auto" }}
-              className={styles.mobile}
+              className={homeStyles.mobile}
             >
               <Text
                 style={{
@@ -253,7 +253,7 @@ export default async function Home() {
                 Dress Up Your Crew
               </Text>
               <Flex
-                className={styles.line}
+                className={homeStyles.line}
                 style={{
                   margin: "auto",
                   padding: "20px",
@@ -279,18 +279,18 @@ export default async function Home() {
             </Flex>
           </Flex>
         </RevealFx>
-        <RevealFx translateY="12" delay={0.4} className={styles.mobile}>
+        <RevealFx translateY="12" delay={0.4} className={homeStyles.mobile}>
           <Flex
             fillWidth
             direction="row"
             radius="l-8"
-            className={styles.mobile}
+            className={homeStyles.mobile}
           >
             <Flex
               direction="column"
               fillWidth
               style={{ margin: "auto" }}
-              className={styles.hidden}
+              className={homeStyles.hidden}
             >
               <Text
                 style={{
@@ -305,7 +305,7 @@ export default async function Home() {
                 Unleash Your Creativity
               </Text>
               <Flex
-                className={styles.line}
+                className={homeStyles.line}
                 style={{
                   margin: "auto",
                   padding: "20px",
@@ -333,7 +333,7 @@ export default async function Home() {
               direction="column"
               fillWidth
               style={{ margin: "auto" }}
-              className={styles.image}
+              className={homeStyles.image}
             >
               <Image
                 src="/images/projects/products/Labubu Cape.jpeg"
@@ -347,7 +347,7 @@ export default async function Home() {
               direction="column"
               fillWidth
               style={{ margin: "auto", paddingTop: "20px" }}
-              className={styles.show}
+              className={homeStyles.show}
             >
               <Text
                 style={{
@@ -362,7 +362,7 @@ export default async function Home() {
                 Unleash Your Creativity
               </Text>
               <Flex
-                className={styles.line}
+                className={homeStyles.line}
                 style={{
                   margin: "auto",
                   padding: "20px",
