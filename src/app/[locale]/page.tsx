@@ -1,22 +1,20 @@
 import React from "react";
-
 import {
   Flex,
   Text,
   RevealFx,
 } from "@/once-ui/components";
-import { baseURL, routes, renderContent } from "@/app/resources";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { baseURL, renderContent } from "@/app/resources";
+import { getTranslations } from "next-intl/server";
 import { Column } from "@/once-ui/components/Column";
 import Image from "next/image";
 import styles from "./Home.module.scss";
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+type PageProps = {
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata() {
   const t = await getTranslations();
   const { home } = renderContent(t);
   const title = home.title;
@@ -30,7 +28,7 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/${locale}`,
+      url: `https://${baseURL}`,
       images: [
         {
           url: ogImage,
@@ -47,14 +45,10 @@ export async function generateMetadata({
   };
 }
 
-export default function Home({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations();
+export default async function Home() {
+  const t = await getTranslations();
   const { home, about, person } = renderContent(t);
+
   return (
     <Flex style={{ overflow: "hidden" }}>
       <Flex
@@ -88,7 +82,7 @@ export default function Home({
         />
 
         <RevealFx translateY="4" fillWidth justifyContent="flex-start">
-          <Flex
+        <Flex
             fillWidth
             direction="row"
             radius="l-8"
