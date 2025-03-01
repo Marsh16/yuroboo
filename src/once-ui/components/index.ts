@@ -26,6 +26,7 @@ export { Icon } from './Icon';
 export { IconButton } from './IconButton';
 export type { IconButtonProps } from './IconButton';
 export { InlineCode } from './InlineCode';
+export { RevealFx } from './RevealFx';
 export { Input } from './Input';
 export type { InputProps } from './Input';
 export { InteractiveDetails } from './InteractiveDetails';
