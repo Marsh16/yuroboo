@@ -114,7 +114,7 @@ export default function HomeComponent({ home, person }: HomeProps) {
                 <Column
                   fillWidth
                   alignItems="center"
-                  style={{ margin: "auto" , paddingTop: "60px"}}
+                  style={{ margin: "auto"}}
                   className={styles.mobileCircle}
                 >
                   <Flex
