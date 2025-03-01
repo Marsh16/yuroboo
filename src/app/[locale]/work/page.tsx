@@ -3,6 +3,7 @@ import { Flex } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations } from 'next-intl/server';
+import { WorkJsonLd } from '@/components/work/WorkJsonLd';
 
 type PageProps = {
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -24,12 +25,7 @@ export async function generateMetadata() {
       description,
       type: 'website',
       url: `https://${baseURL}/work/`,
-      images: [
-        {
-          url: ogImage,
-          alt: title,
-        },
-      ],
+      images: [{ url: ogImage, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -43,7 +39,7 @@ export async function generateMetadata() {
 export default async function Work() {
   const t = await getTranslations();
   const { person, work } = renderContent(t);
-  let allProjects = getPosts(['src', 'app', 'work', 'projects']);
+  const allProjects = getPosts(['src', 'app', 'work', 'projects']);
 
   return (
     <Flex
@@ -51,32 +47,13 @@ export default async function Work() {
       maxWidth="m"
       direction="column"
     >
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            headline: work.title,
-            description: work.description,
-            url: `https://${baseURL}/projects`,
-            image: `${baseURL}/og?title=Design%20Projects`,
-            author: {
-              '@type': 'Person',
-              name: person.name,
-            },
-            hasPart: allProjects.map(project => ({
-              '@type': 'CreativeWork',
-              headline: project.metadata.title,
-              description: project.metadata.summary,
-              url: `https://${baseURL}/projects/${project.slug}`,
-              image: `${baseURL}/${project.metadata.image}`,
-            })),
-          }),
-        }}
+      <WorkJsonLd
+        title={work.title}
+        description={work.description}
+        authorName={person.name}
+        projects={allProjects}
       />
-      <Projects locale="" />
+      <Projects locale=''/>
     </Flex>
   );
 }
