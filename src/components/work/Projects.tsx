@@ -8,12 +8,11 @@ import styles from "./Projects.module.scss";
 
 interface ProjectsProps {
     range?: [number, number?];
-    locale: string;
 }
 
 const categories = ['All', 'Labubu', 'Hirono', 'Smiski', 'Accessories'];
 
-export function Projects({ range, locale }: ProjectsProps) {
+export function Projects({ range }: ProjectsProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>('All'); // Default to 'all'
     const [isMobile, setIsMobile] = useState(false);
 
@@ -26,7 +25,7 @@ export function Projects({ range, locale }: ProjectsProps) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    let allProjects = getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]);
+    let allProjects = getPosts(['src', 'app', '[locale]', 'work', 'projects']);
 
     const sortedProjects = allProjects.sort((a, b) => {
         return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();

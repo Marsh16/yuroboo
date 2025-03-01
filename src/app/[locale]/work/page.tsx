@@ -5,9 +5,6 @@ import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations } from 'next-intl/server';
 import { WorkJsonLd } from '@/components/work/WorkJsonLd';
 
-type PageProps = {
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
 
 export async function generateMetadata() {
   const t = await getTranslations();
@@ -53,7 +50,7 @@ export default async function Work() {
         authorName={person.name}
         projects={allProjects}
       />
-      <Projects locale=''/>
+      <Projects/>
     </Flex>
   );
 }

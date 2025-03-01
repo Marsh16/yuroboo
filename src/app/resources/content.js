@@ -1,5 +1,3 @@
-import { InlineCode } from "@/once-ui/components";
-
 const createContent = (t) => {
     const person = {
         name: 'Yuroboo',
@@ -61,120 +59,19 @@ const createContent = (t) => {
             display: true, // set to false to hide this section
             title: t("about.work.title"),
             experiences: [
-                {
-                    company: 'Apple Developer Academy @ UC',
-                    timeframe: t("about.work.experiences.Apple Developer Academy @ UC.timeframe"),
-                    role: t("about.work.experiences.Apple Developer Academy @ UC.role"),
-                    achievements: t("about.work.experiences.Apple Developer Academy @ UC.achievements").split(";"),
-                    images: [ // optional: leave the array empty if you don't want to display images
-                        {
-                            src: '/images/projects/project-01/certificate-apple.jpeg',
-                            alt: 'Project',
-                            width: 16,
-                            height: 9
-                        },
-                        {
-                            src: '/images/projects/project-01/swift.png',
-                            alt: 'Swift Project',
-                            width: 16,
-                            height: 9
-                        },
-                        {
-                            src: '/images/projects/project-01/grad.jpeg',
-                            alt: 'Project',
-                            width: 16,
-                            height: 9
-                        },
-                        {
-                            src: '/images/projects/project-01/billbro.jpeg',
-                            alt: 'Project',
-                            width: 16,
-                            height: 9
-                        }
-                    ]
-                },
-                {
-                    company: 'Teaching & Learning Innovation Center',
-                    timeframe: t("about.work.experiences.Teaching & Learning Innovation Center.timeframe"),
-                    role: t("about.work.experiences.Teaching & Learning Innovation Center.role"),
-                    achievements: t("about.work.experiences.Teaching & Learning Innovation Center.achievements").split(";"),
-                    images: [ ]
-                },
-                {
-                    company: 'Statistics and Probability Textbooks Using the Python Programming Language',
-                    timeframe: t("about.work.experiences.Statistics and Probability Textbooks Using the Python Programming Language.timeframe"),
-                    role: t("about.work.experiences.Statistics and Probability Textbooks Using the Python Programming Language.role"),
-                    achievements: t("about.work.experiences.Statistics and Probability Textbooks Using the Python Programming Language.achievements").split(";"),
-                    images: [ ]
-                },  
-                {
-                    company: 'Teacher Innovative Behavior Model Research',
-                    timeframe: t("about.work.experiences.Teacher Innovative Behavior Model Research.timeframe"),
-                    role: t("about.work.experiences.Teacher Innovative Behavior Model Research.role"),
-                    achievements: t("about.work.experiences.Teacher Innovative Behavior Model Research.achievements").split(";"),
-                    images: [ ]
-                },
-                {
-                    company: 'Biro Bebras UC',
-                    timeframe: t("about.work.experiences.Biro Bebras UC.timeframe"),
-                    role: t("about.work.experiences.Biro Bebras UC.role"),
-                    achievements: t("about.work.experiences.Biro Bebras UC.achievements").split(";"),
-                    images: [ 
-                        {
-                            src: '/images/projects/project-01/experiences/bebras.png',
-                            alt: 'Project',
-                            width: 16,
-                            height: 9
-                        },
-                    ]
-                },
-                {
-                    company: 'Universitas Ciputra Surabaya',
-                    timeframe: t("about.work.experiences.Universitas Ciputra Surabaya.timeframe"),
-                    role: t("about.work.experiences.Universitas Ciputra Surabaya.role"),
-                    achievements: t("about.work.experiences.Universitas Ciputra Surabaya.achievements").split(";"),
-                    images: [ ]
-                }
             ]
         },
         studies: {
             display: true, // set to false to hide this section
             title: 'Studies',
             institutions: [
-                {
-                    name: 'Universitas Ciputra Surabaya',
-                    description: <>{t(`about.studies.institutions.Universitas Ciputra Surabaya.description`)}</>,
-                }
+
             ]
         },
         technical: {
             display: true, // set to false to hide this section
             title: t("about.technical.title"),
             skills: [
-                {
-                    title: 'Python',
-                    description: <>{t("about.technical.skills.Python.description")}</>,
-                    images: [
-                        {
-                            src: '/images/projects/project-01/python.png',
-                            alt: 'Project image',
-                            width: 16,
-                            height: 9
-                        },
-                    ]
-                },
-                {
-                    title: 'Swift',
-                    description: <>{t("about.technical.skills.Swift.description")}</>, // "." not accepted in next-intl namespace
-                    images: [
-                        {
-                            src: '/images/projects/project-01/swift.png',
-                            alt: 'Project image',
-                            width: 16,
-                            height: 9
-                        },
-                    ]
-                },
             ]
         }
     }
