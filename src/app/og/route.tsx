@@ -2,72 +2,92 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge';
 
-// Minimal styles object to reduce bundle size
-const styles = {
-    container: {
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        padding: '4rem',
-        background: '#151515',
-    },
-    content: {
-        display: 'flex',
-        flexDirection: 'column' as const,
-        justifyContent: 'center',
-        gap: '2rem',
-        color: 'white',
-    },
-    title: {
-        fontSize: '6rem',
-        lineHeight: '6rem',
-        letterSpacing: '-0.05em',
-    },
-    imageContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '2rem'
-    },
-    avatar: {
-        width: '8rem',
-        height: '8rem',
-        objectFit: 'cover' as const,
-        borderRadius: '100%',
-    },
-    info: {
-        display: 'flex',
-        flexDirection: 'column' as const,
-        gap: '0.5rem'
-    },
-    name: {
-        fontSize: '3rem',
-        lineHeight: '3rem',
-    },
-    role: {
-        fontSize: '2rem',
-        lineHeight: '2rem',
-        opacity: '0.6'
-    }
+// Hardcoded data to avoid heavy imports
+const PERSON = {
+  name: "Yuroboo",
+  role: "Handmade with love",
+  avatar: "/images/avatar.png"
 };
 
 export async function GET(request: Request) {
     const url = new URL(request.url);
     const title = url.searchParams.get('title') || 'Portfolio';
+    
+    // Load font directly without variable declaration
+    const fontData = await fetch(
+        new URL('../../../public/fonts/Inter.ttf', import.meta.url)
+    ).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
         (
-            <div style={styles.container}>
-                <div style={styles.content}>
-                    <span style={styles.title}>{title}</span>
-                    <div style={styles.imageContainer}>
-                        <img
-                            src="/images/avatar.png"
-                            style={styles.avatar}
-                            alt="Avatar"
+            <div
+                style={{
+                    display: 'flex',
+                    width: '100%',
+                    height: '100%',
+                    padding: '8rem',
+                    background: '#151515',
+                }}>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        gap: '4rem',
+                        fontFamily: 'Inter',
+                        fontStyle: 'normal',
+                        color: 'white',
+                    }}>
+                    <span
+                        style={{
+                            fontSize: '8rem',
+                            lineHeight: '8rem',
+                            letterSpacing: '-0.05em',
+                            whiteSpace: 'pre-wrap',
+                            textWrap: 'balance',
+                        }}>
+                        {title}
+                    </span>
+                    <div
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '5rem'
+                        }}>
+                        <img 
+                            src={PERSON.avatar}
+                            style={{
+                                width: '12rem',
+                                height: '12rem',
+                                objectFit: 'cover',
+                                borderRadius: '100%',
+                            }}
                         />
-                        <div style={styles.info}>
-                            <span style={styles.name}>Yuroboo</span>
-                            <span style={styles.role}>Handmade with love</span>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '0.75rem'
+                            }}>
+                            <span
+                                style={{
+                                    fontSize: '4.5rem',
+                                    lineHeight: '4.5rem',
+                                    whiteSpace: 'pre-wrap',
+                                    textWrap: 'balance',
+                                }}>
+                                {PERSON.name}
+                            </span>
+                            <span
+                                style={{
+                                    fontSize: '2.5rem',
+                                    lineHeight: '2.5rem',
+                                    whiteSpace: 'pre-wrap',
+                                    textWrap: 'balance',
+                                    opacity: '0.6'
+                                }}>
+                                {PERSON.role}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -76,6 +96,13 @@ export async function GET(request: Request) {
         {
             width: 1920,
             height: 1080,
+            fonts: [
+                {
+                    name: 'Inter',
+                    data: fontData,
+                    style: 'normal',
+                },
+            ],
         }
     );
 }
