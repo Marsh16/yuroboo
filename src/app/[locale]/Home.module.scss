@@ -1,4 +1,4 @@
-@media (--s) {
+@media (max-width: 600px) {
   .mobile {
     text-align: center;
     flex-direction: column;
@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: start;
     background: none;
-    color: "#624633";
+    color: #624633;
   }
 
   .hidden {
@@ -24,7 +24,7 @@
   }
 
   .text {
-      margin: 15px 0;
+    margin: 15px 0;
   }
 }
 
@@ -37,16 +37,15 @@
 .show {
   display: none;
 
-  @media (--s) {
+  @media (max-width: 600px) {
     display: block;
   }
 }
 
 .image-container {
-
   width: 100%;
 
-  >div {
+  > div {
     position: unset !important;
   }
 
@@ -58,7 +57,7 @@
     height: unset !important;
   }
 
-  @media (--s) {
+  @media (max-width: 600px) {
     .image {
       object-fit: contain;
       width: 50% !important;
@@ -69,4 +68,3 @@
     }
   }
 }
-
