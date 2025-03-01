@@ -13,7 +13,7 @@
     color: #624633;
   }
 
-  .hidden {
+  :global(.hidden) {
     display: none;
   }
 
