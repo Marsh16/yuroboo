@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Flex,
   Text,
@@ -393,5 +392,4 @@ export default async function Home() {
       </Flex>
     </Flex>
   );
-}
 }
