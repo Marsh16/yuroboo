@@ -1,9 +1,9 @@
 "use client";
 
-import { AvatarGroup, Flex, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
-import { useState } from "react";
+import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
-import styles from "./ProjectCard.module.scss";
+import styles from "./ProjectCard.module.scss"; // Create this file if it doesn't exist
 
 interface ProjectCardProps {
     href: string;
@@ -23,10 +23,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     avatars
 }) => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
     const t = useTranslations();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsTransitioning(true);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleImageClick = () => {
         if (images.length > 1) {
+            setIsTransitioning(false);
             const nextIndex = (activeIndex + 1) % images.length;
             handleControlClick(nextIndex);
         }
@@ -34,7 +45,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
     const handleControlClick = (index: number) => {
         if (index !== activeIndex) {
-            setActiveIndex(index);
+            setIsTransitioning(false);
+            setTimeout(() => {
+                setActiveIndex(index);
+                setIsTransitioning(true);
+            }, 630);
         }
     };
 
@@ -48,22 +63,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             >
                 {images[activeIndex] && (
                     <Flex onClick={handleImageClick}>
-                        <SmartImage
-                            tabIndex={0}
-                            radius="l"
-                            alt={title}
-                            aspectRatio="4 / 3"
-                            src={images[activeIndex]}
-                            style={{
-                                width: '100%',
-                                height: '220px',
-                                objectFit: 'cover',
-                                border: '1px solid var(--neutral-alpha-weak)',
-                                ...(images.length > 1 && {
-                                    cursor: 'pointer',
-                                }),
-                            }}
-                        />
+                        <RevealFx
+                            style={{ width: '100%' }}
+                            delay={0.4}
+                            trigger={isTransitioning}
+                            speed="fast"
+                        >
+                            <SmartImage
+                                tabIndex={0}
+                                radius="l"
+                                alt={title}
+                                aspectRatio="4 / 3"
+                                src={images[activeIndex]}
+                                style={{
+                                    width: '100%',
+                                    height: '220px',
+                                    objectFit: 'cover',
+                                    border: '1px solid var(--neutral-alpha-weak)',
+                                    ...(images.length > 1 && {
+                                        cursor: 'pointer',
+                                    }),
+                                }}
+                            />
+                        </RevealFx>
                     </Flex>
                 )}
                 {images.length > 1 && (

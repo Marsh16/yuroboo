@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (--s) {
   .mobile {
     text-align: center;
     flex-direction: column;
@@ -24,7 +24,7 @@
   }
 
   .text {
-    margin: 15px 0;
+      margin: 15px 0;
   }
 }
 
@@ -37,15 +37,16 @@
 .show {
   display: none;
 
-  @media (max-width: 600px) {
+  @media (--s) {
     display: block;
   }
 }
 
 .image-container {
+
   width: 100%;
 
-  > div {
+  >div {
     position: unset !important;
   }
 
@@ -57,7 +58,7 @@
     height: unset !important;
   }
 
-  @media (max-width: 600px) {
+  @media (--s) {
     .image {
       object-fit: contain;
       width: 50% !important;
@@ -68,3 +69,4 @@
     }
   }
 }
+

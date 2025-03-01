@@ -47,7 +47,7 @@ export async function generateMetadata() {
 
 export default async function Home() {
   const t = await getTranslations();
-  const { home, about, person } = renderContent(t);
+  const { home, person } = renderContent(t);
 
   return (
     <Flex style={{ overflow: "hidden" }}>
