@@ -1,19 +1,30 @@
 import { ImageResponse } from 'next/og'
-import { baseURL, renderContent } from '@/app/resources';
-import { getTranslations } from 'next-intl/server';
+import { baseURL } from '@/app/resources';
 
 export const runtime = 'edge';
 
+// Simplified interface for person data
+interface Person {
+  name: string;
+  role: string;
+  avatar: string;
+}
+
+// Hardcoded person data to avoid large translations
+const person: Person = {
+  name: "Yuroboo",
+  role: "Handmade with love",
+  avatar: "/images/avatar.png"
+};
+
 export async function GET(request: Request) {
-    let url = new URL(request.url)
-    let title = url.searchParams.get('title') || 'Portfolio'
-    const font = fetch(
+    const url = new URL(request.url);
+    const title = url.searchParams.get('title') || 'Portfolio';
+    
+    // Load font only when needed
+    const fontData = await fetch(
         new URL('../../../public/fonts/Inter.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer());
-    const fontData = await font;
-
-    const t = await getTranslations();
-    const { person } = renderContent(t);
 
     return new ImageResponse(
         (
@@ -41,7 +52,6 @@ export async function GET(request: Request) {
                             lineHeight: '8rem',
                             letterSpacing: '-0.05em',
                             whiteSpace: 'pre-wrap',
-                            textWrap: 'balance',
                         }}>
                         {title}
                     </span>
@@ -51,13 +61,15 @@ export async function GET(request: Request) {
                             alignItems: 'center',
                             gap: '5rem'
                         }}>
-                        <img src={'https://' + baseURL + person.avatar}
+                        <img 
+                            src={`https://${baseURL}${person.avatar}`}
                             style={{
                                 width: '12rem',
                                 height: '12rem',
                                 objectFit: 'cover',
                                 borderRadius: '100%',
-                            }}/>
+                            }}
+                        />
                         <div
                             style={{
                                 display: 'flex',
@@ -68,8 +80,6 @@ export async function GET(request: Request) {
                                 style={{
                                     fontSize: '4.5rem',
                                     lineHeight: '4.5rem',
-                                    whiteSpace: 'pre-wrap',
-                                    textWrap: 'balance',
                                 }}>
                                 {person.name}
                             </span>
@@ -77,8 +87,6 @@ export async function GET(request: Request) {
                                 style={{
                                     fontSize: '2.5rem',
                                     lineHeight: '2.5rem',
-                                    whiteSpace: 'pre-wrap',
-                                    textWrap: 'balance',
                                     opacity: '0.6'
                                 }}>
                                 {person.role}
@@ -97,7 +105,7 @@ export async function GET(request: Request) {
                     data: fontData,
                     style: 'normal',
                 },
-              ],
+            ],
         }
     )
 }
