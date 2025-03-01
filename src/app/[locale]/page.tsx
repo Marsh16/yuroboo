@@ -393,3 +393,85 @@ export default async function Home() {
     </Flex>
   );
 }
+
+// Inline styles
+const styles = `
+  @media (max-width: 600px) {
+    .mobile {
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mobileCircle {
+      text-align: left;
+      flex-direction: column;
+      align-items: start;
+      background: none;
+      color: "#624633";
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .line {
+      border-bottom: 3px solid #624633;
+      margin-top: 5px;
+      width: 90%;
+    }
+
+    .text {
+      margin: 15px 0;
+    }
+  }
+
+  .line {
+    border-bottom: 3px solid #624633;
+    margin-top: 5px;
+    width: 90%;
+  }
+
+  .show {
+    display: none;
+
+    @media (max-width: 600px) {
+      display: block;
+    }
+  }
+
+  .image-container {
+    width: 100%;
+
+    > div {
+      position: unset !important;
+    }
+
+    .image {
+      object-fit: contain;
+      width: 100% !important;
+      border-radius: 20px;
+      position: relative !important;
+      height: unset !important;
+    }
+
+    @media (max-width: 600px) {
+      .image {
+        object-fit: contain;
+        width: 50% !important;
+        border-radius: 20px;
+        position: relative !important;
+        height: unset !important;
+        height: auto;
+      }
+    }
+  }
+`;
+
+// Inject styles into the document head
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
+}
