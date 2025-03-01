@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Flex,
   Text,
@@ -82,7 +83,7 @@ export default async function Home() {
         />
 
         <RevealFx translateY="4" fillWidth justifyContent="flex-start">
-        <Flex
+          <Flex
             fillWidth
             direction="row"
             radius="l-8"
@@ -392,4 +393,5 @@ export default async function Home() {
       </Flex>
     </Flex>
   );
+}
 }
