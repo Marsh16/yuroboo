@@ -1,0 +1,9 @@
+.cardContent {
+    text-align: center;  /* Desktop alignment */
+}
+
+@media (max-width: 768px) {
+    .cardContent {
+        text-align: center;  /* Mobile alignment */
+    }
+}

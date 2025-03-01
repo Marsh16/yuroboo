@@ -3,6 +3,7 @@
 import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
+import styles from "./ProjectCard.module.scss"; // Create this file if it doesn't exist
 
 interface ProjectCardProps {
     href: string;
@@ -35,7 +36,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     }, []);
 
     const handleImageClick = () => {
-        if(images.length > 1) {
+        if (images.length > 1) {
             setIsTransitioning(false);
             const nextIndex = (activeIndex + 1) % images.length;
             handleControlClick(nextIndex);
@@ -75,9 +76,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 aspectRatio="4 / 3"
                                 src={images[activeIndex]}
                                 style={{
-                                    width: '100%', // Ensure the image takes up the full width of its container
-                                    height: '200px', // Set a fixed height for the image
-                                    objectFit: 'cover', // Ensure the image covers the container without distortion
+                                    width: '100%',
+                                    height: '220px',
+                                    objectFit: 'cover',
                                     border: '1px solid var(--neutral-alpha-weak)',
                                     ...(images.length > 1 && {
                                         cursor: 'pointer',
@@ -115,9 +116,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     direction="column"
                     fillWidth
                     paddingX="s"
-                    paddingTop="8" // Reduced padding
-                    paddingBottom="16" // Reduced padding
-                    gap="s" // Reduced gap
+                    paddingTop="8"
+                    paddingBottom="16"
+                    gap="s"
+                    className={styles.cardContent}
                 >
                     {description?.trim() && (
                         <Flex style={{ margin: "auto", marginBottom: "8px" }}>
@@ -125,7 +127,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 wrap="balance"
                                 variant="body-default-xl"
                                 onBackground="neutral-weak"
-                                align="center"
                                 style={{ color: "#624633" }}
                             >
                                 {description}
@@ -138,7 +139,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 as="h2"
                                 wrap="balance"
                                 variant="heading-strong-xl"
-                                align="center"
                                 style={{ color: "#624633" }}
                             >
                                 {title}

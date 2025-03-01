@@ -1,28 +1,16 @@
 import React from "react";
 
 import {
-  Heading,
   Flex,
   Text,
-  Button,
-  Avatar,
   RevealFx,
-  Arrow,
-  Background,
-  //   InlineCode,
-  SmartImage,
 } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
-
 import { baseURL, routes, renderContent } from "@/app/resources";
-// import { Mailchimp } from '@/components';
-// import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Column } from "@/once-ui/components/Column";
 import Image from "next/image";
 import styles from "./Home.module.scss";
-import { Span } from "next/dist/trace";
 
 export async function generateMetadata({
   params: { locale },
