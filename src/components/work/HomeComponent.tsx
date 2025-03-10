@@ -59,7 +59,19 @@ export default function HomeComponent({ home, person }: HomeProps) {
             fillWidth
             direction="row"
             radius="l-8"
-            style={isMobile ? {paddingTop:"30px",textAlign: "center", flexDirection: "column", alignItems: "center", background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)` } : { background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`}}
+            style={
+              isMobile
+                ? {
+                    paddingTop: "30px",
+                    textAlign: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
+                  }
+                : {
+                    background: `linear-gradient(30deg,  #F4D69C 50%, #C85B36 100%)`,
+                  }
+            }
           >
             {!isMobile && (
               <Flex direction="column" fillWidth>
@@ -113,62 +125,74 @@ export default function HomeComponent({ home, person }: HomeProps) {
               </Flex>
             )}
             {isMobile && (
-              <Flex direction="column" className={styles.show}>
+              <Flex
+                direction="column"
+                className={styles.show}
+                style={{ width: "100%", height: "100%" }}
+              >
                 <Column
                   fillWidth
                   alignItems="center"
-                  style={isMobile ? { textAlign: "left", background: "none", color: "#624633",
+                  style={{
+                    textAlign: "left",
+                    background: "none",
+                    color: "#624633",
                     display: "flex",
+                    flexDirection: "column",
                     gap: "30px",
                     alignItems: "flex-start",
-                    margin: "auto"
-                  } : {margin: "auto", paddingTop: "60px"}}
+                    width: "100%",
+                    height: "100%",
+                    padding: "60px 20px",
+                  }}
                 >
                   <Flex
                     direction="column"
-                    height={25}
-                    width={25}
                     gap="20"
                     style={{
-                      margin: "auto",
+                      width: "100%",
+                      height: "100%",
                       color: "white",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
-                    <Flex direction="column">
-                      <Flex>
-                        <Text
-                          style={{
-                            fontSize: "2rem",
-                            fontWeight: "bold",
-                            color: "#624633",
-                            paddingLeft: "20px",
-                          }}
-                        >
-                          WELCOME
-                        </Text>
-                      </Flex>
-                      <Flex>
-                        <Text
-                          style={{
-                            color: "#624633",
-                            paddingLeft: "20px",
-                            paddingRight: "20px",
-                          }}
-                        >
-                          Handmade with love, just for your little companions.
-                          Welcome to our shop filled with charming crochet
-                          accessories designed to fit Labubu, Smiski, and Hirono
-                          perfectly. Each piece is crafted with care and
-                          attention to detail. Our collection includes a variety
-                          of styles and colors, ensuring that you will find the
-                          perfect accessory to match your toy's personality.
-                        </Text>
-                      </Flex>
+                    <Flex direction="column" style={{ width: "100%" }}>
+                      <Text
+                        style={{
+                          fontSize: "2rem",
+                          fontWeight: "bold",
+                          color: "#624633",
+                          textAlign: "left", // Center title
+                          width: "100%",
+                        }}
+                      >
+                        WELCOME
+                      </Text>
+                      <Text
+                        style={{
+                          color: "#624633",
+                          textAlign: "justify",
+                          width: "100%",
+                          lineHeight: "1.5",
+                          flexGrow: 1, // Allow text to expand
+                        }}
+                      >
+                        Handmade with love, just for your little companions.
+                        Welcome to our shop filled with charming crochet
+                        accessories designed to fit Labubu, Smiski, and Hirono
+                        perfectly. Each piece is crafted with care and attention
+                        to detail. Our collection includes a variety of styles
+                        and colors, ensuring that you will find the perfect
+                        accessory to match your toy's personality.
+                      </Text>
                     </Flex>
                   </Flex>
                 </Column>
               </Flex>
             )}
+
             {!isMobile && (
               <Flex direction="column" className={styles.hidden}>
                 <Column
@@ -188,17 +212,47 @@ export default function HomeComponent({ home, person }: HomeProps) {
             )}
           </Flex>
         </RevealFx>
-        <RevealFx translateY="12" delay={0.4} style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : {}}>
+        <RevealFx
+          translateY="12"
+          delay={0.4}
+          style={
+            isMobile
+              ? {
+                  textAlign: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }
+              : {}
+          }
+        >
           <Flex
             fillWidth
             direction="row"
-            radius="l-8" style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : {}}
+            radius="l-8"
+            style={
+              isMobile
+                ? {
+                    textAlign: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }
+                : {}
+            }
             className={styles.mobile}
           >
             <Flex
               direction="column"
               fillWidth
-              style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : { margin: "auto" }}
+              style={
+                isMobile
+                  ? {
+                      textAlign: "center",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      paddingBottom: "20px"
+                    }
+                  : { margin: "auto" }
+              }
             >
               <SmartImage
                 tabIndex={0}
@@ -218,7 +272,17 @@ export default function HomeComponent({ home, person }: HomeProps) {
             <Flex
               direction="column"
               fillWidth
-              style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : { margin: "auto" }}
+              style={
+                isMobile
+                  ? {
+                      textAlign: "center",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      display: "flex",
+                      justifyContent: "center", // Centers vertically
+                    }
+                  : { margin: "auto" }
+              }
             >
               <Text
                 style={{
@@ -227,6 +291,7 @@ export default function HomeComponent({ home, person }: HomeProps) {
                   fontSize: "2rem",
                   fontWeight: "bold",
                   color: "#624633",
+                  paddingTop: "20px"
                 }}
               >
                 Dress Up Your Crew
@@ -235,7 +300,6 @@ export default function HomeComponent({ home, person }: HomeProps) {
                 className={styles.line}
                 style={{
                   margin: "auto",
-                  padding: "20px",
                   color: "#624633",
                 }}
               ></Flex>
@@ -258,63 +322,111 @@ export default function HomeComponent({ home, person }: HomeProps) {
             </Flex>
           </Flex>
         </RevealFx>
-        <RevealFx translateY="12" delay={0.4} style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : {}}>
+        <RevealFx
+          translateY="12"
+          delay={0.4}
+          style={
+            isMobile
+              ? {
+                  textAlign: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }
+              : {}
+          }
+        >
           <Flex
             fillWidth
             direction="row"
             radius="l-8"
-            style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : {}}
-                      >
-          {!isMobile && (
-            <Flex
-              direction="column"
-              fillWidth
-              style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : { margin: "auto" }}
-              className={styles.hidden}
-            >
-              <Text
-                style={{
-                  marginBottom: "auto",
-                  padding: "20px",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  color: "#624633",
-                  textAlign: "end",
-                }}
-              >
-                Unleash Your Creativity
-              </Text>
+            style={
+              isMobile
+                ? {
+                    textAlign: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }
+                : {}
+            }
+          >
+            {!isMobile && (
               <Flex
-                className={styles.line}
-                style={{
-                  margin: "auto",
-                  paddingTop: "20px",
-                  paddingInline: "20px",
-                  color: "#624633",
-                  textAlign: "end",
-                }}
-              ></Flex>
-              <Text
-                style={{
-                  margin: "auto",
-                  padding: "20px",
-                  color: "#624633",
-                  textAlign: "end",
-                }}
+                direction="column"
+                fillWidth
+                style={
+                  isMobile
+                    ? {
+                        textAlign: "center",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }
+                    : { margin: "auto" }
+                }
+                className={styles.hidden}
               >
-                Have a specific color in mind? Dreaming of a unique design? We
-                love bringing your crochet accessory ideas to life! Our custom
-                crochet service allows you to create the perfect pieces for your
-                Labubu, Smiski, or Hirono. Whether you want to match your own
-                style, create a themed outfit, or simply add a personal touch,
-                we'll work with you every step of the way.{" "}
-              </Text>
-            </Flex>
-          )}
+                <Text
+                  style={
+                    isMobile
+                      ? {
+                          textAlign: "center",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          marginBottom: "auto",
+                          paddingTop: "20px",
+                          fontSize: "2rem",
+                          padding: "20px",
+                          fontWeight: "bold",
+                          color: "#624633",
+                        }
+                      : {
+                          marginBottom: "auto",
+                          padding: "20px",
+                          fontSize: "2rem",
+                          fontWeight: "bold",
+                          color: "#624633",
+                          textAlign: "end",
+                        }
+                  }
+                >
+                  Unleash Your Creativity
+                </Text>
+                <Flex
+                  className={styles.line}
+                  style={{
+                    margin: "auto",
+                    color: "#624633",
+                    textAlign: "end",
+                  }}
+                ></Flex>
+                <Text
+                  style={{
+                    margin: "auto",
+                    padding: "20px",
+                    color: "#624633",
+                    textAlign: "end",
+                  }}
+                >
+                  Have a specific color in mind? Dreaming of a unique design? We
+                  love bringing your crochet accessory ideas to life! Our custom
+                  crochet service allows you to create the perfect pieces for
+                  your Labubu, Smiski, or Hirono. Whether you want to match your
+                  own style, create a themed outfit, or simply add a personal
+                  touch, we'll work with you every step of the way.{" "}
+                </Text>
+              </Flex>
+            )}
             <Flex
               direction="column"
               fillWidth
-              style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : { margin: "auto" }}
+              style={
+                isMobile
+                  ? {
+                      textAlign: "center",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }
+                  : { margin: "auto" }
+              }
             >
               <SmartImage
                 tabIndex={0}
@@ -332,56 +444,86 @@ export default function HomeComponent({ home, person }: HomeProps) {
               />
             </Flex>
             {isMobile && (
-            <Flex
-              direction="column"
-              fillWidth
-              style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center" } : { margin: "auto", paddingTop: "20px"}}
-              className={styles.show}
-            >
-              <Text
-                style={{
-                  marginBottom: "auto",
-                  padding: "20px",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  color: "#624633",
-                  textAlign: "end",
-                }}
-              >
-                Unleash Your Creativity
-              </Text>
               <Flex
-                className={styles.line}
-                style={{
-                  margin: "auto",
-                  padding: "20px",
-                  color: "#624633",
-                  textAlign: "end",
-                  marginBottom: "20px",
-                }}
-              ></Flex>
-              <Text
-                style={isMobile ? {    textAlign: "center", flexDirection: "column", alignItems: "center",
-                  margin: "auto",
-                  paddingTop: "20px",
-                  paddingInline: "20px",
-                  color: "#624633",
-                } : { 
-                  margin: "auto",
-                  padding: "20px",
-                  color: "#624633",
-                  textAlign: "end",
-                  paddingTop: "20px",
-                }}
+                direction="column"
+                fillWidth
+                style={
+                  isMobile
+                    ? {
+                        textAlign: "center",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        margin: "auto",
+                        paddingTop: "20px",
+                        display: "flex",
+                        justifyContent: "center", // Centers vertically
+                      }
+                    : { margin: "auto", paddingTop: "20px" }
+                }
+                className={styles.show}
               >
-                Have a specific color in mind? Dreaming of a unique design? We
-                love bringing your crochet accessory ideas to life! Our custom
-                crochet service allows you to create the perfect pieces for your
-                Labubu, Smiski, or Hirono. Whether you want to match your own
-                style, create a themed outfit, or simply add a personal touch,
-                we'll work with you every step of the way.{" "}
-              </Text>
-            </Flex>
+                <Text
+                  style={
+                    isMobile
+                      ? {
+                          textAlign: "center",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          paddingTop: "20px",
+                          fontSize: "2rem",
+                          padding: "20px",
+                          fontWeight: "bold",
+                          color: "#624633",
+                        }
+                      : {
+                          marginBottom: "auto",
+                          padding: "20px",
+                          fontSize: "2rem",
+                          fontWeight: "bold",
+                          color: "#624633",
+                          textAlign: "end",
+                        }
+                  }
+                >
+                  Unleash Your Creativity
+                </Text>
+                <Flex
+                  className={styles.line}
+                  style={{
+                    margin: "auto",
+                    color: "#624633",
+                    textAlign: "end",
+                    marginBottom: "20px",
+                  }}
+                ></Flex>
+                <Text
+                  style={
+                    isMobile
+                      ? {
+                          textAlign: "center",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          margin: "auto",
+                          paddingInline: "20px",
+                          color: "#624633",
+                        }
+                      : {
+                          margin: "auto",
+                          padding: "20px",
+                          color: "#624633",
+                          textAlign: "end",
+                          paddingTop: "20px",
+                        }
+                  }
+                >
+                  Have a specific color in mind? Dreaming of a unique design? We
+                  love bringing your crochet accessory ideas to life! Our custom
+                  crochet service allows you to create the perfect pieces for
+                  your Labubu, Smiski, or Hirono. Whether you want to match your
+                  own style, create a themed outfit, or simply add a personal
+                  touch, we'll work with you every step of the way.{" "}
+                </Text>
+              </Flex>
             )}
           </Flex>
         </RevealFx>
