@@ -30,6 +30,9 @@
 }
 
 .filterSelect {
+    font-size: 16px; /* Ensures readability and prevents zoom issues */
+    min-width: 100px; /* Adjust based on your needs */
+    height: 40px;
     padding: 10px;
     border: none;
     border-radius: 12px; /* increased roundness for the select */
