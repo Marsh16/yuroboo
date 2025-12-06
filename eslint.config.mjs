@@ -1,32 +1,28 @@
 import { defineConfig } from "eslint/config";
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import next from "eslint-config-next";
 import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+export default defineConfig([
+  ...next(), // Next.js recommended rules
 
-export default defineConfig([{
-    files: ["**/*.js", "**/*.jsx", "**/*.vue"],
-    extends: [...nextCoreWebVitals],
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
 
     languageOptions: {
-        globals: {
-            ...globals.browser,
+      globals: {
+        ...globals.browser,
+      },
+      ecmaVersion: "latest",
+      sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
         },
-
-        ecmaVersion: "latest",
-        sourceType: "module",
-
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
-            },
-        },
+      },
     },
 
     rules: {
-        "no-debugger": "off",
+      "no-debugger": "off",
     },
-}]);
+  },
+]);
